@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<declare-styleable name="TimeLineMarker">-->
+        <!--&lt;!&ndash;圆点大小&ndash;&gt;-->
+        <!--<attr name="markerSize" format="dimension" />-->
+        <!--&lt;!&ndash;圆点颜色或者图片&ndash;&gt;-->
+        <!--<attr name="marker" format="color|reference" />-->
+        <!--&lt;!&ndash;上面线段颜色或者图片&ndash;&gt;-->
+        <!--<attr name="beginLine" format="color|reference" />-->
+        <!--&lt;!&ndash;下面线段颜色或者图片&ndash;&gt;-->
+        <!--<attr name="endLine" format="color|reference" />-->
+        <!--&lt;!&ndash;线段粗细&ndash;&gt;-->
+        <!--<attr name="lineSize" format="dimension" />-->
+        <!--&lt;!&ndash;横向还是竖向&ndash;&gt;-->
+        <!--<attr name="oritation" format="boolean" />-->
+    <!--</declare-styleable>-->
+
+    <declare-styleable name="timeline_style" >
+        <attr name="marker" format="color|reference"/>
+        <attr name="line" format="color|reference"/>
+        <attr name="beginLine" format="color|reference" />
+        <attr name="endLine" format="color|reference" />
+        <attr name="markerSize" format="dimension"/>
+        <attr name="lineSize" format="dimension"/>
+        <attr name="lineOrientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="linePadding" format="dimension"/>
+        <attr name="markerInCenter" format="boolean"/>
+    </declare-styleable>
+
+</resources>

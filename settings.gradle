@@ -1,0 +1,8 @@
+include ':app', ':my_recyclerview', ':my_android_new_version_api', ':android_new_version_api', ':01_OkMediaPlayer',
+        ':drawableCenterTextView',
+        ':doughnut',
+        ':gallery',
+        ':fitchart',
+        ':uitimatebar',
+        ':immersivestatusbar',
+        ':timeline'

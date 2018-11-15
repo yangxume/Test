@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="177.33dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_publish"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:clickable="true"
+        android:background="@drawable/task_reslist_popup_textbg"
+        android:gravity="center"
+        android:text="立即发布任务"
+        android:textColor="@drawable/task_reslist_popup_text_color"
+        android:textSize="18.67sp" />
+
+    <TextView
+        android:id="@+id/tv_publish_answer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/task_reslist_popup_textbg"
+        android:gravity="center"
+        android:text="立即公布答案"
+        android:textColor="@drawable/task_reslist_popup_text_color"
+        android:textSize="18.67sp" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/task_reslist_popup_textbg"
+        android:gravity="center"
+        android:text="取消发布"
+        android:textColor="@drawable/task_reslist_popup_text_color"
+        android:textSize="18.67sp" />
+
+</LinearLayout>

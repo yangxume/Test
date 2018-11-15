@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.github.vipulasri.timelineview.TimelineView
+        android:id="@+id/time_marker"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        app:marker="@drawable/marker"
+        app:markerInCenter="true"
+        app:line="@color/colorPrimary"
+        app:lineOrientation="horizontal"
+        app:lineSize="2dp"/>
+
+    <!--<okay.test.timeline.view.TimeLineMarkerView-->
+        <!--android:id="@+id/time1"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:paddingTop="20dp"-->
+        <!--app:beginLine="@color/blue_sky"-->
+        <!--app:endLine="@color/blue_sky"-->
+        <!--app:marker="@drawable/timeline_bg_blue"-->
+        <!--app:oritation="true" />-->
+
+</LinearLayout>

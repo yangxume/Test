@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.okay.test">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 1.图片相关 begin -->
+        <activity
+            android:name=".activity.activity01_image.Activity01_AboutImage"
+            android:label="1-图片相关" />
+        <activity android:name=".activity.activity01_image.Activity01_01_DrawDashLine" />
+        <activity android:name=".activity.activity01_image.Activity01_02_ShapeCorner" />
+        <activity android:name=".activity.activity01_image.Activity01_03_SpliceBitmap" />
+        <activity android:name=".activity.activity01_image.Activity01_04_LoadBigImage" />
+        <activity android:name=".activity.activity01_image.Activity01_05_LruCache"/>
+
+        <!-- 2.utils -->
+
+        <activity android:name=".activity.activity02_util.Activity02_AboutUtil" />
+        <activity android:name=".activity.activity02_util.Activity02_01_LiveTemplates" />
+        <activity android:name=".activity.activity02_util.Activity02_02_StringSpannable" />
+        <activity android:name=".activity.activity02_util.Activity02_03_ImageSpan" />
+
+        <!-- 3.views -->
+        <activity android:name=".activity.activity03_view.Activity03_AboutView" />
+        <activity android:name=".activity.activity03_view.Activity03_01_PopupWindow" />
+        <activity android:name=".activity.activity03_view.Activity03_02_NiceSpinner" />
+        <activity android:name=".activity.activity03_view.Activity03_03_StatusBar" />
+        <activity android:name=".activity.activity03_view.Activity03_04_Snackbar"></activity>
+
+    </application>
+
+</manifest>

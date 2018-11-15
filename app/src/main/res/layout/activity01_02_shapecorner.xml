@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F6F7"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66.67dp"
+        android:layout_margin="50dp"
+
+        android:gravity="center_horizontal"
+        android:background="@android:color/holo_orange_light"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_query_question"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/general_details_tab_left_default"
+            android:gravity="center"
+            android:text="按题查看"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_21.33" />
+
+        <TextView
+            android:id="@+id/tv_query_people"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/general_details_tab_right_default"
+            android:gravity="center"
+            android:text="按人查看"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_21.33" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66.67dp"
+        android:layout_margin="50dp"
+        android:background="@android:color/holo_orange_light"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/general_details_tab_left_selected"
+            android:gravity="center"
+            android:text="按题查看"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_21.33" />
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/general_details_tab_right_selected"
+            android:gravity="center"
+            android:text="按人查看"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_21.33" />
+
+    </LinearLayout>
+</LinearLayout>

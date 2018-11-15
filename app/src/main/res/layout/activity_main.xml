@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn1_about_image"
+        style="@style/style_common_btn"
+        android:text="1_about_image" />
+
+    <Button
+        android:id="@+id/btn2_about_util"
+        style="@style/style_common_btn"
+        android:text="2_about_utils" />
+
+    <Button
+        android:id="@+id/btn3_about_view"
+        style="@style/style_common_btn"
+        android:text="3_about_view" />
+
+</LinearLayout>

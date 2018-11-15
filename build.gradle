@@ -1,0 +1,62 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from:"config.gradle"
+
+buildscript {
+    repositories {
+
+//        jcenter()
+
+        maven{
+            url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+        }
+
+        google()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+
+//        classpath 'com.android.tools.build:gradle:3.0.0-alpha6'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+
+        maven{
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        maven{
+            url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+        }
+        maven {
+            url "https://jitpack.io"
+        }
+
+        jcenter()
+
+        google()
+
+        maven {
+            url "http://10.60.0.100:8081/repository/okayclient_snapshot/"
+        }
+        maven {
+            url "http://10.60.0.100:8081/repository/okayclient/"
+        }
+        maven {
+            url "http://10.60.0.100:8081/repository/okayrom/"
+        }
+        maven {
+            url "http://10.60.0.100:8081/repository/okayrom_snapshot/"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

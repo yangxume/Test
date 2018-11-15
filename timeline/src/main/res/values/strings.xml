@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">timeline</string>
+    <string name="horizontal_timeline">horizontal_timeline</string>
+    <string name="vertiacl_timeline">vertiacl_timeline</string>
+    <string name="basic_timeline">basic_timeline</string>
+    <string name="horizontal_vertical_timeline">horizontal_vertical_timeline</string>
+    <string name="test_timeline">test_timeline</string>
+
+</resources>

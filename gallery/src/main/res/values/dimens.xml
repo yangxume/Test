@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--- pull -->
+    <dimen name="task_indicator_right_padding">10dp</dimen>
+    <dimen name="task_indicator_corner_radius">12dp</dimen>
+    <dimen name="task_indicator_internal_padding">4dp</dimen>
+    <dimen name="task_header_footer_left_right_padding">24dp</dimen>
+    <dimen name="task_header_footer_top_bottom_padding">12dp</dimen>
+    <dimen name="task_item_vertical_spacing">13dp</dimen>
+    <dimen name="task_item_horizontal_spacing">13dp</dimen>
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_11">11dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_27">27dp</dimen>
+    <dimen name="dp_29">29dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_93">93dp</dimen>
+
+    <!--report-->
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_13.33">13.33sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18.67">18.67sp</dimen>
+    <dimen name="sp_21.33">21.33sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_26.67">26.67sp</dimen>
+    <dimen name="sp_27">27sp</dimen>
+    <dimen name="sp_29.33">29.33sp</dimen>
+
+
+    <dimen name="dp_6.67">6.67dp</dimen>
+    <dimen name="dp_9.33">9.33dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_13.33">13.33dp</dimen>
+    <dimen name="dp_18.67">18.67dp</dimen>
+    <dimen name="dp_21.33">21.33dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_26_67">26.67dp</dimen>
+    <dimen name="dp_33_33">33.33dp</dimen>
+    <dimen name="dp_46_67">46.67dp</dimen>
+    <dimen name="dp_53.33">53.33dp</dimen>
+    <dimen name="dp_56">56dp</dimen>
+    <dimen name="dp_66.67">66.67dp</dimen>
+    <dimen name="dp_133.33">133.33dp</dimen>
+    <dimen name="dp_136_67" type="dimen" format="float">136.67dp</dimen>
+    <dimen name="dp_146.67">146.67dp</dimen>
+    <dimen name="dp_586.67">586.67dp</dimen>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <okay.test.timeline.view.TimelineView
+        android:id="@+id/timelineview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_50"
+        android:background="@android:color/darker_gray"
+
+        app:beginLine="@android:color/holo_red_light"
+        app:endLine="@android:color/holo_green_light"
+        app:lineSize="10dp"
+        app:lineOrientation="horizontal"
+        app:marker="@mipmap/ic_launcher"
+        app:markerInCenter="true"
+
+
+        />
+
+</LinearLayout>
