@@ -1,21 +1,16 @@
 package com.xy.okmediaplayer;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.okay.mediaplayersdk.media.IPlayerEndListener;
-import com.okay.mediaplayersdk.media.IPlayerErrorListener;
-import com.okay.mediaplayersdk.media.IPlayerProgressListener;
-import com.okay.mediaplayersdk.player.IOkMediaPlayer;
-import com.okay.mediaplayersdk.player.OkMediaInfo;
-import com.okay.mediaplayersdk.player.OkMediaPlayer;
-import com.okay.mediaplayersdk.player.OkMediaPlayerOption;
+import com.okay.mediaplayersdk.player.MediaInfo;
+import com.okay.mediaplayersdk.player.MediaPlayer;
+import com.okay.mediaplayersdk.player.MediaPlayerOption;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements IOkMediaPlayer{
+public class MainActivity extends AppCompatActivity{
 
     private String media_json = "[\n" +
             "  {\n" +
@@ -69,15 +64,15 @@ public class MainActivity extends AppCompatActivity implements IOkMediaPlayer{
     private void initView() {
 
 
-        OkMediaPlayer okMediaPlayer = findViewById(R.id.media_player);
+        MediaPlayer okMediaPlayer = findViewById(R.id.media_player);
 
-        List<OkMediaInfo> list = new ArrayList<>();
+        List<MediaInfo> list = new ArrayList<>();
 
-        OkMediaInfo okMediaInfo = new OkMediaInfo();
+        MediaInfo okMediaInfo = new MediaInfo();
         okMediaInfo.url = "https://rv.okjiaoyu.cn/rv_13ifdbxfgbu.normal.h264.mp4";
         list.add(okMediaInfo);
 
-        OkMediaPlayerOption okMediaPlayerOption = new OkMediaPlayerOption
+        MediaPlayerOption okMediaPlayerOption = new MediaPlayerOption
                 .Builder()
                 .setMediaInfoList(list)
                 .build();
@@ -86,108 +81,5 @@ public class MainActivity extends AppCompatActivity implements IOkMediaPlayer{
 
     }
 
-    @Override
-    public void setOption(OkMediaPlayerOption okMediaPlayerOption) {
-
-    }
-
-    @Override
-    public void play() {
-
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void stop() {
-
-    }
-
-    @Override
-    public void seekTo(int i) {
-
-    }
-
-    @Override
-    public void request2FullScreen() {
-
-    }
-
-    @Override
-    public void quit2FullScreen() {
-
-    }
-
-    @Override
-    public void request2Size(int i, int i1) {
-
-    }
-
-    @Override
-    public boolean isCurrentFullScreenMode() {
-        return false;
-    }
-
-    @Override
-    public Bitmap getThubmnail() {
-        return null;
-    }
-
-    @Override
-    public boolean isPlaying() {
-        return false;
-    }
-
-    @Override
-    public void setSpeed(float v) {
-
-    }
-
-    @Override
-    public void switchStream(String s) {
-
-    }
-
-    @Override
-    public void setIPlayerProgressListener(IPlayerProgressListener iPlayerProgressListener) {
-
-    }
-
-    @Override
-    public void setIPlayerErrorListener(IPlayerErrorListener iPlayerErrorListener) {
-
-    }
-
-    @Override
-    public void setIPlayerEndListener(IPlayerEndListener iPlayerEndListener) {
-
-    }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    @Override
-    public int getBufferPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getCurrentPosition() {
-        return 0;
-    }
-
-    @Override
-    public void saveState() {
-
-    }
-
-    @Override
-    public void restoreState() {
-
-    }
+   
 }
