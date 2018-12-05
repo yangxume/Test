@@ -1,5 +1,6 @@
 package com.xy.okmediaplayer;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -10,7 +11,7 @@ import com.okay.mediaplayersdk.player.MediaPlayerOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends Activity {
 
     private String media_json = "[\n" +
             "  {\n" +
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity{
             "    \"url_h\": \"https://rv.okjiaoyu.cn/rv_12plxi2cXEA.mp4\"\n" +
             "  }\n" +
             "]";
+    private MediaPlayer okMediaPlayer;
 
 
     @Override
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity{
     private void initView() {
 
 
-        MediaPlayer okMediaPlayer = findViewById(R.id.media_player);
+        okMediaPlayer = findViewById(R.id.media_player);
 
         List<MediaInfo> list = new ArrayList<>();
 
@@ -81,5 +83,33 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
-   
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (okMediaPlayer != null) {
+            okMediaPlayer.saveState();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (okMediaPlayer != null) {
+            okMediaPlayer.restoreState();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (okMediaPlayer != null) {
+            okMediaPlayer.stop();
+        }
+    }
 }
