@@ -100,7 +100,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 final AnimationDrawable animationDrawable = (AnimationDrawable) holder.iv_state.getDrawable();
                 animationDrawable.start();
 
-                Runnable runnable = new Runnable() {
+                Runnable raiseHandRunnable = new Runnable() {
                     @Override
                     public void run() {
 
@@ -110,11 +110,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                             }
                         }
                         holder.iv_state.setImageResource(R.mipmap.speak_and_write);
+                        DataManager.getDataManager().getmHandler().removeCallbacks(this);
+
                     }
                 };
 
-                DataManager.getDataManager().getRunnableMap().put(position+"",runnable);
-                DataManager.getDataManager().getmHandler().postDelayed(runnable,8000);
+                DataManager.getDataManager().getRunnableMap().put(position+"",raiseHandRunnable);
+                DataManager.getDataManager().getmHandler().postDelayed(raiseHandRunnable,8000);
 
 
             }else if(payload.equals("audio")){
@@ -123,8 +125,23 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 MyViewHolder viewHolder = holder;
 
                 holder.iv_state.setImageResource(R.mipmap.classroom_live_audio_connecting);
-                Animation mAudioConnectingAnimation = AnimationUtils.loadAnimation(mContext, R.anim.classroom_livelesson_view_animation_rotate);
+                final Animation mAudioConnectingAnimation = AnimationUtils.loadAnimation(mContext, R.anim.classroom_livelesson_view_animation_rotate);
                 holder.iv_state.startAnimation(mAudioConnectingAnimation);
+
+                final Runnable audioRunnable = new Runnable() {
+                    @Override
+                    public void run() {
+
+                        if (mAudioConnectingAnimation != null){
+                                mAudioConnectingAnimation.cancel();
+                        }
+                        holder.iv_state.setImageResource(R.mipmap.speak_and_write);
+                        DataManager.getDataManager().getmHandler().removeCallbacks(this);
+                    }
+                };
+
+                DataManager.getDataManager().getRunnableMap().put(position+"",audioRunnable);
+                DataManager.getDataManager().getmHandler().postDelayed(audioRunnable,5000);
             }
         }
 
