@@ -1,5 +1,5 @@
-include ':app', ':my_recyclerview', ':my_android_new_version_api', ':android_new_version_api', ':recyclerview',
-        ':drawableCenterTextView',
+include ':app',
+        ':recyclerview',
         ':doughnut',
         ':gallery',
         ':fitchart',
