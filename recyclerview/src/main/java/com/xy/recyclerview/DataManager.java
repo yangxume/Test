@@ -13,9 +13,11 @@ public class DataManager {
 
     private Map<String, Runnable> runnableMap = new HashMap<>();
 
-    public static DataManager getDataManager(){
+    private int speakState = 0;//0: 默认未发言  1 ： 发言请求中  2：请求超时
 
-        if (mDataManager == null){
+    public static DataManager getDataManager() {
+
+        if (mDataManager == null) {
             mDataManager = new DataManager();
         }
         return mDataManager;
@@ -27,5 +29,13 @@ public class DataManager {
 
     public Map<String, Runnable> getRunnableMap() {
         return runnableMap;
+    }
+
+    public int getSpeakState() {
+        return speakState;
+    }
+
+    public void setSpeakState(int speakState) {
+        this.speakState = speakState;
     }
 }

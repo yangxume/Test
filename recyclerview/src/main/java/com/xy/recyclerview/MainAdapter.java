@@ -104,6 +104,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                     @Override
                     public void run() {
 
+                        DataManager.getDataManager().setSpeakState(0);
+
                         if (animationDrawable != null){
                             if (animationDrawable.isRunning()){
                                 animationDrawable.stop();
@@ -131,6 +133,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 final Runnable audioRunnable = new Runnable() {
                     @Override
                     public void run() {
+
+                        DataManager.getDataManager().setSpeakState(0);
 
                         if (mAudioConnectingAnimation != null){
                                 mAudioConnectingAnimation.cancel();

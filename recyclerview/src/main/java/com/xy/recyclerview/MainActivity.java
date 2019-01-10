@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
     private MainAdapter mAdapter;
 
     private List<StudentBean> mDatas;
-    private  boolean hasSpeaker = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +116,9 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
     public void onItemClick(View view) {
         int position = mRecyclerView.getChildAdapterPosition(view);
 
-        if (!hasSpeaker){
+        if (DataManager.getDataManager().getSpeakState() == 0){
+
+            DataManager.getDataManager().setSpeakState(1);
 
             StudentBean studentBean = mAdapter.getDataList().get(position);
             studentBean.state = 1;
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
 
             mAdapter.notifyItemChanged(position,"audio");
 
-            hasSpeaker = true;
+
         }else{
             Toast.makeText(MainActivity.this,"连接中,请稍候", Toast.LENGTH_SHORT).show();
 
