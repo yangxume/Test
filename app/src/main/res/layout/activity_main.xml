@@ -19,4 +19,9 @@
         style="@style/style_common_btn"
         android:text="3_about_view" />
 
+    <Button
+        android:id="@+id/btn4_about_utils"
+        style="@style/style_common_btn"
+        android:text="4_about_utils" />
+
 </LinearLayout>
