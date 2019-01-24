@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.com.uniwill.dell.mengxi"
+        applicationId "com.uniwill.dell.mengxi"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

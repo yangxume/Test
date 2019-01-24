@@ -19,9 +19,6 @@ import java.util.Set;
 import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
 
-import com.com.uniwill.dell.mengxi.R;
-import  com.uniwill.dell.mengxi.R;
-
 public class SettingActivity extends InstrumentedActivity implements OnClickListener {
 	TimePicker startTime;
 	TimePicker endTime;

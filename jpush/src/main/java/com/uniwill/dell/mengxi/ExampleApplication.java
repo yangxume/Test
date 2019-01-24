@@ -1,6 +1,8 @@
 package com.uniwill.dell.mengxi;
 
 import android.app.Application;
+import android.util.Log;
+
 import cn.jpush.android.api.JPushInterface;
 
 /**
@@ -18,5 +20,9 @@ public class ExampleApplication extends Application {
 
          JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
          JPushInterface.init(this);     		// 初始化 JPush
+
+        String registrationID = JPushInterface.getRegistrationID(this);
+        Log.e(TAG, "myapp onCreate: registrationID = "+registrationID );
+
     }
 }

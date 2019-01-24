@@ -16,9 +16,6 @@ import android.widget.Toast;
 import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
 
-import com.com.uniwill.dell.mengxi.R;
-import  com.uniwill.dell.mengxi.R;
-
 
 
 public class MainActivity extends InstrumentedActivity implements OnClickListener{

@@ -19,19 +19,17 @@ import cn.jpush.android.api.CustomPushNotificationBuilder;
 import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
 
-import com.com.uniwill.dell.mengxi.R;
-import  com.uniwill.dell.mengxi.R;
 import cn.jpush.android.api.MultiActionsNotificationBuilder;
 import cn.jpush.android.api.TagAliasCallback;
 
-import static com.example.jpushdemo.TagAliasOperatorHelper.ACTION_ADD;
-import static com.example.jpushdemo.TagAliasOperatorHelper.ACTION_CHECK;
-import static com.example.jpushdemo.TagAliasOperatorHelper.ACTION_CLEAN;
-import static com.example.jpushdemo.TagAliasOperatorHelper.ACTION_DELETE;
-import static com.example.jpushdemo.TagAliasOperatorHelper.ACTION_GET;
-import static com.example.jpushdemo.TagAliasOperatorHelper.ACTION_SET;
-import static com.example.jpushdemo.TagAliasOperatorHelper.TagAliasBean;
-import static com.example.jpushdemo.TagAliasOperatorHelper.sequence;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.ACTION_ADD;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.ACTION_CHECK;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.ACTION_CLEAN;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.ACTION_DELETE;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.ACTION_GET;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.ACTION_SET;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.TagAliasBean;
+import static com.uniwill.dell.mengxi.TagAliasOperatorHelper.sequence;
 
 
 public class PushSetActivity extends InstrumentedActivity implements OnClickListener {
