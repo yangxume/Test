@@ -1,4 +1,4 @@
-include ':app', ':brocast_receiver',
+include ':app', ':brocast_receiver', ':Robolectric',
         ':recyclerview',
         ':doughnut',
         ':gallery',
