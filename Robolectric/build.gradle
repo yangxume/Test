@@ -4,8 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         applicationId "com.xy.robolectric"
         minSdkVersion 15
@@ -24,6 +22,13 @@ android {
         }
     }
 
+    //这一步不弄，不能运行起来
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
 }
 
 dependencies {
@@ -34,4 +39,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //目前最新为3.8
+    testImplementation 'org.robolectric:robolectric:3.8'
 }
