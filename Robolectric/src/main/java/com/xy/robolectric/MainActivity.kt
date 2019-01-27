@@ -7,6 +7,7 @@ import android.os.Bundle
 
 //https://blog.csdn.net/u010316858/article/details/70312795
 
+//https://www.jianshu.com/p/3aa0e4efcfd3
 
 class MainActivity : AppCompatActivity() {
 
