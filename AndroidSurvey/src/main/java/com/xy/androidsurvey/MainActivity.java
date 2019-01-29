@@ -54,6 +54,14 @@ implements View.OnClickListener {
 
                 break;
 
+            case R.id.btn2:
+
+                Intent intent2 = new Intent(MainActivity.this, Survey2Activity.class);
+                startActivity(intent2);
+                finish();
+
+                break;
+
         }
 
 

@@ -18,6 +18,7 @@
         </activity>
 
         <activity android:name=".Survey1Activity"/>
+        <activity android:name=".Survey2Activity"/>
     </application>
 
 </manifest>
