@@ -1,8 +1,12 @@
-include ':app', ':brocast_receiver', ':Robolectric', ':AndroidSurvey',
+include ':app',
+        ':brocast_receiver',
+        ':Robolectric',
+        ':AndroidSurvey',
         ':recyclerview',
         ':doughnut',
         ':gallery',
         ':fitchart',
         ':uitimatebar',
         ':immersivestatusbar',
-        ':timeline', ':JPushExample'
+        ':timeline', ':JPushExample',
+        ':AnswerSystem1'
