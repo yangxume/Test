@@ -1,4 +1,4 @@
-include ':app',
+include ':app', ':test_contentprovider',
         ':brocast_receiver',
         ':Robolectric',
         ':AndroidSurvey',

@@ -13,26 +13,44 @@ import com.okay.test.R;
 
 public class HomeKeyActivity extends AppCompatActivity {
 
-
     private static final String LOG_TAG = "HomeKeyActivity";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LOG_TAG, "onCreate: ");
         setContentView(R.layout.activity_processisbackground);
+        registerHomeKeyReceiver(this);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        registerHomeKeyReceiver(this);
+        Log.d(LOG_TAG, "onResume: ");
 
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d(LOG_TAG, "onPause: ");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG, "onDestroy: ");
+
         unregisterHomeKeyReceiver(this);
+
     }
 
     private HomeWatcherReceiver mHomeKeyReceiver = null;
@@ -54,7 +72,6 @@ public class HomeKeyActivity extends AppCompatActivity {
 
     class HomeWatcherReceiver extends BroadcastReceiver {
 
-        private static final String LOG_TAG = "HomeReceiver";
         private static final String SYSTEM_DIALOG_REASON_KEY = "reason";
         private static final String SYSTEM_DIALOG_REASON_RECENT_APPS = "recentapps";
         private static final String SYSTEM_DIALOG_REASON_HOME_KEY = "homekey";
