@@ -67,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                String sortOrder =People.KEY_ID + " limit 0,10" ;
+
                 Cursor cursor = resolver.query(People.CONTENT_URI,
                         new String[]{People.KEY_ID, People.KEY_NAME,
                                 People.KEY_AGE, People.KEY_HEIGHT}, null,
-                        null, null);
+                        null, sortOrder);
                 if (cursor == null) {
                     labelView.setText("数据库中没有数据");
                     return;
