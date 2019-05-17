@@ -1,4 +1,4 @@
-include ':app', ':test_contentprovider', ':test_sqlite_provider',
+include ':app', ':test_contentprovider', ':test_sqlite_provider', ':ArticlesProvider',
         ':brocast_receiver',
         ':Robolectric',
         ':AndroidSurvey',
