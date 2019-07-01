@@ -1,4 +1,4 @@
-package com.xy.recyclerview;
+package com.xy.recyclerview.bean;
 
 public class StudentBean {
 

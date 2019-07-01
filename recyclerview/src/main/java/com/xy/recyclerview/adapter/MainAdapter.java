@@ -1,4 +1,4 @@
-package com.xy.recyclerview;
+package com.xy.recyclerview.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
@@ -11,6 +11,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.xy.recyclerview.DataManager;
+import com.xy.recyclerview.R;
+import com.xy.recyclerview.bean.StudentBean;
 
 import java.util.List;
 
