@@ -1,11 +1,11 @@
 package com.xy.recyclerview.bean;
 
-public class StudentBean {
+public class RaiseHandBean {
 
     public String name;
     public int state;
 
-    public StudentBean(String name, int state) {
+    public RaiseHandBean(String name, int state) {
         this.name = name;
         this.state = state;
     }

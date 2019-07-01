@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.xy.recyclerview.bean.DiseaseBankEntity;
+import com.xy.recyclerview.bean.RecyGridBean;
 import com.xy.recyclerview.view.SpacesItemDecoration;
 
 import java.util.ArrayList;
@@ -15,14 +15,14 @@ import java.util.List;
 
 public class RecyGridActivity extends AppCompatActivity {
 
-    private List<DiseaseBankEntity> list = new ArrayList<>();
+    private List<RecyGridBean> list = new ArrayList<>();
 
     RecyclerView recyclerview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_disease_bank);
+        setContentView(R.layout.activity_recy_grid);
         recyclerview = findViewById(R.id.recyclerview);
 
         initData();
@@ -33,9 +33,9 @@ public class RecyGridActivity extends AppCompatActivity {
 
         recyclerview.addItemDecoration(new SpacesItemDecoration(12));
         //直接new一个匿名类，就不用单独创建Adapter类文件了。
-        recyclerview.setAdapter(new BaseQuickAdapter<DiseaseBankEntity, BaseViewHolder>(R.layout.item_layout_grid, list) {
+        recyclerview.setAdapter(new BaseQuickAdapter<RecyGridBean, BaseViewHolder>(R.layout.item_layout_recy_grid, list) {
             @Override
-            protected void convert(BaseViewHolder helper, DiseaseBankEntity item) {
+            protected void convert(BaseViewHolder helper, RecyGridBean item) {
                 //调用赋值
                 helper.setText(R.id.tv_item, item.getTitle());
             }
@@ -45,7 +45,7 @@ public class RecyGridActivity extends AppCompatActivity {
     //模拟数据
     private void initData() {
         for (int i = 0; i < 10; i++) {
-            DiseaseBankEntity bank = new DiseaseBankEntity();
+            RecyGridBean bank = new RecyGridBean();
             bank.setId(String.valueOf(i));
             bank.setTitle("title" + i);
             list.add(bank);

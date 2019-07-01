@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
  *
  * https://github.com/lcodecorex/TwinklingRefreshLayout
  */
-public class TestTwinklingRefreshLayoutActivity  extends AppCompatActivity {
+public class TwinklingRefreshLayoutActivity extends AppCompatActivity {
 
 //    TwinklingRefreshLayout refreshLayout;
 
@@ -19,7 +19,7 @@ public class TestTwinklingRefreshLayoutActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_trinkling_refresh_layout);
+        setContentView(R.layout.activity_trinkling_refresh);
     }
 
 }

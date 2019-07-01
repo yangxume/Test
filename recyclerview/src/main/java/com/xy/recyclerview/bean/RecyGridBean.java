@@ -1,6 +1,6 @@
 package com.xy.recyclerview.bean;
 
-public class DiseaseBankEntity {
+public class RecyGridBean {
 
     private String id;
     private String title;

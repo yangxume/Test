@@ -12,18 +12,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.xy.recyclerview.DataManager;
+import com.xy.recyclerview.util.DataManager;
 import com.xy.recyclerview.R;
-import com.xy.recyclerview.bean.StudentBean;
+import com.xy.recyclerview.bean.RaiseHandBean;
 
 import java.util.List;
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> {
+public class RaiseHandAdapter extends RecyclerView.Adapter<RaiseHandAdapter.MyViewHolder> {
 
-    private static final String TAG = MainAdapter.class.getSimpleName();
+    private static final String TAG = RaiseHandAdapter.class.getSimpleName();
 
     private Context mContext;
-    private List<StudentBean> mDatas;
+    private List<RaiseHandBean> mDatas;
 
     private OnItemClickListener onItemClickListener;
 
@@ -31,12 +31,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         this.onItemClickListener = onItemClickListener;
     }
 
-    public MainAdapter(Context context, List<StudentBean> mDatas) {
+    public RaiseHandAdapter(Context context, List<RaiseHandBean> mDatas) {
         this.mContext = context;
         this.mDatas = mDatas;
     }
 
-    public List<StudentBean> getDataList(){
+    public List<RaiseHandBean> getDataList(){
         return mDatas;
     }
 
@@ -44,7 +44,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
      * 增加数据
      */
     public void addData(int position) {
-        mDatas.add(position, new StudentBean("aaa",0));
+        mDatas.add(position, new RaiseHandBean("aaa",0));
         notifyItemInserted(position);//注意这里
     }
 
@@ -59,7 +59,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        MyViewHolder viewHolder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_layout, parent, false));
+        MyViewHolder viewHolder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_layout_raise_hand, parent, false));
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +97,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
             if(payload.equals("raise_hand")){
 
-                StudentBean studentBean = mDatas.get(position);
+                RaiseHandBean raiseHandBean = mDatas.get(position);
                 MyViewHolder viewHolder = holder;
 
                 holder.iv_state.setImageResource(R.drawable.classroom_raise_hand_animlist);
@@ -127,7 +127,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
             }else if(payload.equals("audio")){
 
-                StudentBean studentBean = mDatas.get(position);
+                RaiseHandBean raiseHandBean = mDatas.get(position);
                 MyViewHolder viewHolder = holder;
 
                 holder.iv_state.setImageResource(R.mipmap.classroom_live_audio_connecting);
