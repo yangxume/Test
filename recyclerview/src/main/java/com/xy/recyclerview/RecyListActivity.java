@@ -20,7 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://blog.csdn.net/lmj623565791/article/details/45059587
+ * 基本使用：https://blog.csdn.net/lmj623565791/article/details/45059587
+ *
+ * 各种分割线：
+ *       https://www.jianshu.com/p/e68a0b5fd383
+ *       https://blog.csdn.net/crazyzhangxl/article/details/81043205
  */
 public class RecyListActivity extends AppCompatActivity {
 
