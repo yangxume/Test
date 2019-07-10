@@ -5,10 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.example.answer.adapter.MyErrorQuestionListAdapter;
-import com.example.answer.bean.ErrorQuestion;
-import com.example.answer.bean.ErrorQuestionInfo;
-import com.example.answer.database.DBManager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +18,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.xy.answersystem1.adapter.MyErrorQuestionListAdapter;
+import com.xy.answersystem1.bean.ErrorQuestion;
+import com.xy.answersystem1.bean.ErrorQuestionInfo;
+import com.xy.answersystem1.database.DBManager;
 
 /**
  * 我的错题
@@ -103,7 +104,7 @@ public class MyErrorQuestionActivity extends Activity {
 		} else {
 			Map<String, Object> map = null;
 			for (int i = 0; i < errorQuestionInfos.length; i++) {
-				ErrorQuestion errorQuestion=new ErrorQuestion();
+				ErrorQuestion errorQuestion=new ErrorQuestion(null);
 				map = new HashMap<String, Object>();
 				map.put("title", errorQuestionInfos[i].questionName);// 标题
 				map.put("type", errorQuestionInfos[i].questionType);// 标题

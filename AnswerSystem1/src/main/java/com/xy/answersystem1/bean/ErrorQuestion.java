@@ -19,7 +19,7 @@ public class ErrorQuestion implements Parcelable{
 	public String optionE;
 	public String optionType;
 
-	protected ErrorQuestion(Parcel in) {
+	public ErrorQuestion(Parcel in) {
 		questionId = in.readInt();
 		questionName = in.readString();
 		questionType = in.readString();
