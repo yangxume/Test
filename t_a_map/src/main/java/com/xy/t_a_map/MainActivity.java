@@ -138,7 +138,7 @@ public class MainActivity extends FragmentActivity implements RouteSearch.OnRout
         /**
          * 设置路径颜色
          */
-        mMap.addPolyline(new PolylineOptions().addAll(list).width(10).color(Color.RED));
+        mMap.addPolyline(new PolylineOptions().addAll(list).width(10).color(Color.GRAY));
         /**
          *  改变地图视口
          */
