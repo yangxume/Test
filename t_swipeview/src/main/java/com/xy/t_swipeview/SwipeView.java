@@ -11,6 +11,8 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -229,8 +231,14 @@ public class SwipeView extends RelativeLayout {
         final ViewGroup.LayoutParams layoutParams = rlHeader.getLayoutParams();
         layoutParams.height = layoutParams.height - dy;
         rlHeader.setLayoutParams(layoutParams);
-        checkTheHeight();
+//        checkTheHeight();
         rlHeader.requestLayout();
+
+//        ViewGroup.LayoutParams layoutParams1 = tvName.getLayoutParams();
+//        layoutParams1.height = layoutParams1.height - dy;
+//        tvName.setLayoutParams(layoutParams1);
+//        tvName.requestLayout();
+
         //计算当前移动了多少距离
         mCurrentDistance = mOrignHight - rlHeader.getLayoutParams().height;
         mRate = (float) (mCurrentDistance * 1.0 / mNeedDistance);
@@ -248,7 +256,9 @@ public class SwipeView extends RelativeLayout {
     private void changeTheAlphaAndPostion(float rate) {
         //先改变一些控件的透明度
         if (rate >= 1) {
+
         } else if (0.0 != rate) {
+            tvName.setAlpha(1 - rate * 2);
             tvSchool.setAlpha(1 - rate * 2);
         }
 
@@ -256,14 +266,16 @@ public class SwipeView extends RelativeLayout {
         final RelativeLayout.LayoutParams photoParams = (RelativeLayout.LayoutParams) ivHeader.getLayoutParams();
         photoParams.width = (int) (mPhotoOriginWidth - (rate * (mPhotoOriginWidth - UIUtils.dip2px(getContext(), 40))));
         photoParams.height = (int) (mPhotoOriginWidth - (rate * (mPhotoOriginWidth - UIUtils.dip2px(getContext(), 40))));
-        photoParams.leftMargin = (int) (mPhotoLeft + mPhotoNeedMoveDistanceX * rate);
+        photoParams.leftMargin = (int) (mPhotoLeft + 1 * rate);
         photoParams.topMargin = (int) (mPhotoTop - mPhotoNeedMoveDistanceY * rate);
         Log.d(TAG, "photoParams.leftMargin" + photoParams.leftMargin);
         Log.d(TAG, " photoParams.topMargin" + photoParams.topMargin);
         ivHeader.setLayoutParams(photoParams);
+
+
         /*********************文字设置****************************/
         final RelativeLayout.LayoutParams textParams = (RelativeLayout.LayoutParams) tvName.getLayoutParams();
-        textParams.leftMargin = (int) (mTextLeft + mTextNeedMoveDistanceX * rate);
+        textParams.leftMargin = (int) (mTextLeft + 1 * rate);
         textParams.topMargin = (int) (mTextTop - mTextNeedMoveDistanceY * rate);
         Log.d(TAG, "textParams.leftMargin" + textParams.leftMargin);
         Log.d(TAG, " textParams.topMargin" + textParams.topMargin);
@@ -298,9 +310,17 @@ public class SwipeView extends RelativeLayout {
             mCurrentDistance = mNeedDistance;
             currentState = TOP;
 
+            Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.scalesmall);
+            a.setFillAfter(true);
+//            tvName.startAnimation(a);
+
         } else {
             mCurrentDistance = 0;
             currentState = BOTTOM;
+
+            Animation a = AnimationUtils.loadAnimation(getContext(), R.anim.scalebig);
+            a.setFillAfter(true);
+//            tvName.startAnimation(a);
         }
 
         final RelativeLayout.LayoutParams rlParams = (RelativeLayout.LayoutParams) rlHeader.getLayoutParams();
@@ -374,15 +394,15 @@ public class SwipeView extends RelativeLayout {
             }
         });
 
-        ValueAnimator tvSchoolAlphaAnim = ValueAnimator.ofFloat(tvSchool.getAlpha() * 2, rate == 1 ? 0 : 1).setDuration(200);
-        tvSchoolAlphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                tvSchool.setAlpha(value);
-            }
-        });
-        tvSchoolAlphaAnim.start();
+//        ValueAnimator tvSchoolAlphaAnim = ValueAnimator.ofFloat(tvSchool.getAlpha() * 2, rate == 1 ? 0 : 1).setDuration(200);
+//        tvSchoolAlphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//            @Override
+//            public void onAnimationUpdate(ValueAnimator animation) {
+//                float value = (float) animation.getAnimatedValue();
+//                tvSchool.setAlpha(value);
+//            }
+//        });
+//        tvSchoolAlphaAnim.start();
 
         ivTopAnim.start();
         rlHAnim.start();

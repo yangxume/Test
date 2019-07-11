@@ -1,0 +1,157 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 28
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        applicationId "com.xy.t_a_map"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                JPUSH_APPKEY : "0ed9db96fdc875087fedbc26", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-splash", //暂时填写默认值即可.
+        ]
+
+        if (project.hasProperty('AUTO')) {
+            def cmd1 = 'git rev-list HEAD --first-parent --count'
+            def autoVCode = cmd1.execute().text.trim()
+            println autoVCode
+            def cmd2 = 'git log -1 --pretty=format:"%h"'
+            def autoVName = cmd2.execute().text.trim().replaceAll("\"", "")
+            println autoVName
+
+            versionCode Integer.parseInt(autoVCode)
+            versionName autoVName
+        } else if (project.hasProperty('TAG')) {
+            def cmd = 'git describe --abbrev=0'
+            def tagInfo = cmd.execute().text.trim()
+            assert tagInfo.split('/') instanceof String[]
+            def String[] infos = tagInfo.split('/')
+            println infos
+
+            def vName = infos[0]
+            println vName
+
+            def vCode = infos[1]
+            println vCode
+
+            versionCode Integer.parseInt(vCode)
+            versionName vName
+        } else {
+
+            if (project.hasProperty('V_CODE')) {
+                versionCode Integer.parseInt(V_CODE)
+            } else {
+                versionCode 2
+            }
+            if (project.hasProperty('V_NAME')) {
+                versionName V_NAME
+            } else {
+                //约定:本地debug版本名称以"debug_"开始
+                versionName "1.0.1"
+            }
+        }
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64"
+        }
+
+        packagingOptions {
+            pickFirst '**/libstlport_shared.so'
+        }
+    }
+
+    //当前用的签名
+    signingConfigs {
+        releaseConfig {
+            storeFile file('keyset/xuyang_android_dev_key.jks')
+            storePassword "Xu_Yang011502"
+            keyAlias "xuyang_android_dev_key"
+            keyPassword "Xu_Yang011502"
+        }
+
+        debugConfig {
+            storeFile file('keyset/xuyang_android_dev_key.jks')
+            storePassword "Xu_Yang011502"
+            keyAlias "xuyang_android_dev_key"
+            keyPassword "Xu_Yang011502"
+        }
+    }
+
+    buildTypes {
+        debug {
+            //渠道号
+            buildConfigField "String", "CHANNEL", "\"t_pad\""
+            buildConfigField "String", "SERVER_ENV_SELECT_DEFAULT", "\"develop\""
+
+            manifestPlaceholders = [factory_mode_activity_action: "android.intent.action.MAIN"]
+//            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            debuggable true
+            buildConfigField "boolean", "OPEN_LOG", "true"
+            signingConfig signingConfigs.debugConfig
+        }
+        release {
+            //渠道号
+            buildConfigField "String", "CHANNEL", "\"t_pad\""
+            buildConfigField "String", "SERVER_ENV_SELECT_DEFAULT", "\"formal\""
+
+            manifestPlaceholders = [factory_mode_activity_action: "android.intent.action.MAIN.release"]
+            //Zipalign 优化
+            zipAlignEnabled false
+            //移除无用的resource文件
+            shrinkResources false
+            //混淆
+            minifyEnabled false
+            buildConfigField "boolean", "OPEN_LOG", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+            debuggable false
+        }
+
+        applicationVariants.all { variant ->
+            /* variant.outputs.each { output ->
+                 def outputFile = output.outputFile
+                 if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                     def fileName = "t_teacherapp_${defaultConfig.versionName}_${defaultConfig.versionCode}_${releaseTime()}_${outputFile.name}"
+                     output.outputFile = new File(outputFile.parent, fileName)
+                 }
+             }*/
+            variant.outputs.all {
+//                if (outputFileName.endsWith('.apk')) {
+//                    //这里使用之前定义apk文件名称
+//                    if (variant.buildType.name == "debug") {
+//                        outputFileName = "concrete_app_${defaultConfig.versionName}_${defaultConfig.versionCode}_${releaseTime()}-debug.apk"
+//                    } else if (variant.buildType.name == "release") {
+//                        outputFileName = "concrete_app_${defaultConfig.versionName}_${defaultConfig.versionCode}_${releaseTime()}-release.apk"
+//                    }
+//                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
