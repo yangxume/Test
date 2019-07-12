@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@mipmap/personal_main_background"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        zhy:layout_constraintTop_toTopOf="parent"
+        android:layout_width="765dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/shape_circle_bg_white"
+        zhy:layout_constraintLeft_toLeftOf="parent"
+        zhy:layout_constraintRight_toRightOf="parent">
+
+        <com.xy.t_layout.view.flowlayout.TagFlowLayout
+            android:id="@+id/flowlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            zhy:max_select="-1" />
+
+    </ScrollView>
+
+
+
+</android.support.constraint.ConstraintLayout>

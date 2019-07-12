@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="43dp"
+    android:layout_margin="5dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/dp_24"
+    android:paddingRight="@dimen/dp_24"
+    android:background="@drawable/bg_layout_item_tv"
+    android:text="Helloworld"
+    android:textSize="@dimen/sp_22"
+    android:textColor="@color/blue_FF0082FF">
+</TextView>

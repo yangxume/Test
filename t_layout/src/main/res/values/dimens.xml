@@ -6,4 +6,7 @@
     <dimen name="dp_30">30dp</dimen>
     <dimen name="dp_24">24dp</dimen>
     <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="dp_64">64dp</dimen>
+    <dimen name="px_1">1px</dimen>
 </resources>
