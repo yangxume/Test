@@ -3,6 +3,7 @@ package com.xy.t_layout.activity.multiflowlayout;
 import android.os.Bundle;
 import android.view.View;
 
+
 import com.xy.t_layout.R;
 import com.xy.t_layout.view.multiflowlayout.FlowLayoutAdapter;
 import com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView;
@@ -10,16 +11,16 @@ import com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LayoutMultiScrollActivity extends BaseActivity {
+public class Activity_03_LayoutScroll extends BaseActivity_03 {
     private FlowLayoutAdapter<String> flowLayoutAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout_multi_scroll);
+        setContentView(R.layout.activity_03_layout);
 
         List<String> list=new ArrayList<>();
-        list.add("会囧哥");
+        list.add("环境");
         list.add("环境");
         list.add("如果皇太后");
         list.add("人皇太后");
@@ -108,27 +109,18 @@ public class LayoutMultiScrollActivity extends BaseActivity {
             public void bindDataToView(ViewHolder holder, int position, String bean) {
 
                 holder.setText(R.id.tv,bean);
-
-
             }
 
             @Override
             public void onItemClick(int position, String bean) {
 
-                if (position==0||position==1||position==2){
-
-                    return;
-                }
                 remove(position);
 
             }
 
             @Override
             public int getItemLayoutID(int position, String bean) {
-                if (position==0||position==1||position==2){
-                    return R.layout.item_layout2;
-                }
-                return R.layout.item_layout;
+                return R.layout.layout_03_item_tv_del_top_right;
             }
         };
         ((FlowLayoutScrollView)findViewById(R.id.flsv)).setAdapter(flowLayoutAdapter);

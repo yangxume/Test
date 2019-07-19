@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.xy.t_layout.Activity_01_CoordinatorLayout;
-import com.xy.t_layout.Activity_02_FlowLayout;
 import com.xy.t_layout.R;
 
 import butterknife.BindView;
@@ -20,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnCoordinatorlayout;
     @BindView(R.id.btn_flowlayout)
     Button btnFlowlayout;
+    @BindView(R.id.btn_flexboxlayout)
+    Button btnFlexboxlayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_coordinatorlayout, R.id.btn_flowlayout})
+    @OnClick({R.id.btn_coordinatorlayout,
+            R.id.btn_flowlayout,
+            R.id.btn_multi_flowlayout,
+            R.id.btn_flexboxlayout
+    })
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_coordinatorlayout:
@@ -36,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_flowlayout:
                 startActivity(new Intent(MainActivity.this, Activity_02_FlowLayout.class));
+                break;
+            case R.id.btn_multi_flowlayout:
+                startActivity(new Intent(MainActivity.this, Activity_03_MultiFlowLayout.class));
+                break;
+            case R.id.btn_flexboxlayout:
+                startActivity(new Intent(MainActivity.this, Activity_04_FlexboxLayout.class));
                 break;
         }
     }

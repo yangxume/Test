@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_43"
+    android:layout_margin="@dimen/dp_8"
+    android:background="@drawable/shape_circle_bg_white_blue"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/dp_24"
+    android:layout_marginRight="@dimen/dp_24"
+    android:layout_marginBottom="16dp"
+    android:paddingRight="@dimen/dp_24"
+    android:text="四年级"
+    android:textColor="#FF335166"
+    android:textSize="21sp" />
+

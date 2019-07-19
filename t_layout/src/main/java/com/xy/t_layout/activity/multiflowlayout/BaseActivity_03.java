@@ -24,7 +24,7 @@ import android.widget.Toast;
  * Created by lenovo on 2017/4/25.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity_03 extends AppCompatActivity implements View.OnClickListener {
     private String toast_permission;
     private OnPermissionHaveListener onPermissionHaveListener;
     public SharedPreferences sharedPreferences;

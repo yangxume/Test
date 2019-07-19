@@ -1,4 +1,4 @@
-package com.xy.t_layout;
+package com.xy.t_layout.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.xy.t_layout.R;
 import com.xy.t_layout.view.flowlayout.TagAdapter;
 import com.xy.t_layout.view.flowlayout.TagFlowLayout;
 import com.xy.t_layout.view.flowlayout.FlowLayout;

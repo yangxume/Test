@@ -10,13 +10,13 @@ import com.xy.t_layout.view.multiflowlayout.FlowLayoutAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TVActivity extends BaseActivity {
+public class Activity_03_TV extends BaseActivity_03 {
 
     private FlowLayoutAdapter<String> flowLayoutAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tv);
+        setContentView(R.layout.activity_03_tv);
         List<String> list=new ArrayList<>();
             list.add("环境");
             list.add("环境");
@@ -61,7 +61,7 @@ public class TVActivity extends BaseActivity {
 
             @Override
             public int getItemLayoutID(int position, String bean) {
-                return R.layout.item_tv;
+                return R.layout.layout_item_tv;
             }
         };
         ((FlowLayout)findViewById(R.id.fl)).setAdapter(flowLayoutAdapter);

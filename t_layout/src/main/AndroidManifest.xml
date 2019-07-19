@@ -17,10 +17,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activity_01_CoordinatorLayout"/>
+        <activity android:name=".activity.Activity_01_CoordinatorLayout"/>
 
-        <activity android:name=".Activity_02_FlowLayout"/>
+        <activity android:name=".activity.Activity_02_FlowLayout"/>
 
+        <activity android:name=".activity.Activity_03_MultiFlowLayout"/>
+
+        <activity android:name=".activity.Activity_04_FlexboxLayout"/>
+
+
+        <activity android:name=".activity.multiflowlayout.Activity_03_TV"/>
+        <activity android:name=".activity.multiflowlayout.Activity_03_TVScroll"/>
+        <activity android:name=".activity.multiflowlayout.Activity_03_LayoutScroll"/>
+        <activity android:name=".activity.multiflowlayout.Activity_03LayoutMultiScroll"/>
 
     </application>
 

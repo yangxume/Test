@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fl"
-    android:layout_width="match_parent"
+    android:layout_width="765dp"
+    android:layout_height="149dp"
     app:width_space="10dp"
     app:height_space="10dp"
     android:padding="10dp"
-    android:layout_height="400dp">
+    android:background="@android:color/darker_gray"
+    >
 
 </com.xy.t_layout.view.multiflowlayout.FlowLayout>

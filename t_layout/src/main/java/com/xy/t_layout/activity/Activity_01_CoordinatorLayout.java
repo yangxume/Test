@@ -1,8 +1,10 @@
-package com.xy.t_layout;
+package com.xy.t_layout.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.xy.t_layout.R;
 
 public class Activity_01_CoordinatorLayout extends AppCompatActivity {
 

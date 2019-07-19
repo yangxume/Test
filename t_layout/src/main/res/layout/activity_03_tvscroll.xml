@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="455dp"
+    android:layout_height="240dp"
+    android:padding="10dp"
+    app:height_space="10dp"
+    app:width_space="10dp">
+
+
+    <com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView
+        android:id="@+id/flsv"
+        android:layout_width="455dp"
+        android:layout_height="240dp"
+        android:padding="10dp"
+        app:height_space="10dp"
+        app:width_space="10dp">
+
+    </com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView>
+
+
+</ScrollView>

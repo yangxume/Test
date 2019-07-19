@@ -14,4 +14,14 @@
         style="@style/style_btn_main"
         android:text="flowlayout" />
 
+    <Button
+        android:id="@+id/btn_multi_flowlayout"
+        style="@style/style_btn_main"
+        android:text="multi_flowlayout" />
+
+    <Button
+        android:id="@+id/btn_flexboxlayout"
+        style="@style/style_btn_main"
+        android:text="flexboxlayout" />
+
 </LinearLayout>

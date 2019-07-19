@@ -16,12 +16,12 @@
         android:textColor="@color/blue_FF0082FF"
         android:textSize="@dimen/sp_22" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/iv"-->
-    <!--android:layout_width="15dp"-->
-    <!--android:layout_height="15dp"-->
-    <!--android:layout_gravity="right|top"-->
-    <!--android:scaleType="centerCrop"-->
-    <!--android:src="@drawable/icon_close" />-->
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="right|top"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_close" />
 
 </FrameLayout>

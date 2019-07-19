@@ -9,4 +9,8 @@
     <dimen name="sp_22">22sp</dimen>
     <dimen name="dp_64">64dp</dimen>
     <dimen name="px_1">1px</dimen>
+    <dimen name="dp_43">43dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+
+
 </resources>
