@@ -24,6 +24,7 @@ public class BasicActivity extends BaseActivity {
     private PopupWindow mWeiboPop;
 
     private Button mCommentBtn;
+    private Button btn_01;
 
     @Override
     protected int setLayoutId() {
@@ -40,6 +41,7 @@ public class BasicActivity extends BaseActivity {
         mTitleBar = (TitleBar) findViewById(R.id.tb_basic);
         mTitleBar.setTile("传统使用");
         mCommentBtn = (Button) findViewById(R.id.btn_comment);
+        btn_01 = (Button) findViewById(R.id.btn_01);
         initCirclePop();
         initQQPop();
         initWeiboPop();
@@ -62,6 +64,16 @@ public class BasicActivity extends BaseActivity {
 
             @Override
             public void onTitleClick(View view) {
+                if (mWeiboPop != null) {
+                    Log.e(TAG, "onTitleClick: " + view.getWidth());
+                    mWeiboPop.showAsDropDown(view, view.getWidth() / 2 - mWeiboPop.getContentView().getWidth() / 2, 0);
+                }
+            }
+        });
+
+        btn_01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 if (mWeiboPop != null) {
                     Log.e(TAG, "onTitleClick: " + view.getWidth());
                     mWeiboPop.showAsDropDown(view, view.getWidth() / 2 - mWeiboPop.getContentView().getWidth() / 2, 0);

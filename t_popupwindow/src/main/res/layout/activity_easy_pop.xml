@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEE8CD"
-    android:orientation="vertical"
-    tools:context="com.zyyoona7.easypopup.easypop.EasyPopActivity">
+    android:orientation="vertical">
 
-    <com.zyyoona7.easypopup.views.TitleBar
+    <com.xy.t_popupwindow.easypopup.views.TitleBar
         android:id="@+id/tb_easy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.zyyoona7.easypopup.views.TitleBar>
+    </com.xy.t_popupwindow.easypopup.views.TitleBar>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

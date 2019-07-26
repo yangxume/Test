@@ -1,4 +1,4 @@
-package com.xy.t_popupwindow.easypopup.base;
+package com.xy.t_popupwindow;
 
 import android.app.Application;
 
