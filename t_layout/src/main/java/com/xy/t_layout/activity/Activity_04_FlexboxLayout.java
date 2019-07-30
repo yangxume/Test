@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.google.android.flexbox.FlexboxLayout;
 import com.xy.t_layout.R;
-import com.xy.t_layout.UIUtil;
+import com.xy.t_layout.util.UIUtil;
 import com.xy.t_layout.bean.Grade;
 /**
  * https://www.jianshu.com/p/217b3f4a1a18

@@ -9,7 +9,7 @@
     app:width_space="10dp">
 
 
-    <com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView
+    <com.xy.t_layout.multiflowlayout.FlowLayoutScrollView
         android:id="@+id/flsv"
         android:layout_width="455dp"
         android:layout_height="240dp"
@@ -17,7 +17,7 @@
         app:height_space="10dp"
         app:width_space="10dp">
 
-    </com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView>
+    </com.xy.t_layout.multiflowlayout.FlowLayoutScrollView>
 
 
 </ScrollView>

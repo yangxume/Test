@@ -1,4 +1,4 @@
-package com.xy.t_layout.view.multiflowlayout;
+package com.xy.t_layout.multiflowlayout;
 
 
 import android.graphics.Bitmap;

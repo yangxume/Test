@@ -1,4 +1,4 @@
-package com.xy.t_layout.activity;
+package com.xy.t_layout.flowlayout;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,9 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xy.t_layout.R;
-import com.xy.t_layout.view.flowlayout.TagAdapter;
-import com.xy.t_layout.view.flowlayout.TagFlowLayout;
-import com.xy.t_layout.view.flowlayout.FlowLayout;
 
 public class Activity_02_FlowLayout extends AppCompatActivity {
 

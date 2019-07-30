@@ -1,4 +1,4 @@
-package com.xy.t_layout;
+package com.xy.t_layout.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

@@ -15,7 +15,7 @@
         zhy:layout_constraintLeft_toLeftOf="parent"
         zhy:layout_constraintRight_toRightOf="parent">
 
-        <com.xy.t_layout.view.flowlayout.TagFlowLayout
+        <com.xy.t_layout.flowlayout.TagFlowLayout
             android:id="@+id/flowlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

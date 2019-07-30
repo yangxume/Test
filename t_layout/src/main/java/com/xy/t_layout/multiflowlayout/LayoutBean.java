@@ -1,4 +1,4 @@
-package com.xy.t_layout.activity.multiflowlayout;
+package com.xy.t_layout.multiflowlayout;
 
 /**
  * Created by cy on 2018/4/14.

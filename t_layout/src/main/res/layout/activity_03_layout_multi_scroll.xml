@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.xy.t_layout.multiflowlayout.FlowLayoutScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/flsv"
@@ -7,4 +7,4 @@
     android:layout_width="765dp"
     android:layout_height="149dp">
 
-</com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView>
+</com.xy.t_layout.multiflowlayout.FlowLayoutScrollView>

@@ -1,11 +1,9 @@
-package com.xy.t_layout.activity.multiflowlayout;
+package com.xy.t_layout.multiflowlayout;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.xy.t_layout.R;
-import com.xy.t_layout.view.multiflowlayout.FlowLayoutAdapter;
-import com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView;
 
 import java.util.ArrayList;
 import java.util.List;

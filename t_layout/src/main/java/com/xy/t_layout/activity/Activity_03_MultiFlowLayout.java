@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.xy.t_layout.R;
-import com.xy.t_layout.activity.multiflowlayout.BaseActivity_03;
-import com.xy.t_layout.activity.multiflowlayout.Activity_03LayoutMultiScroll;
-import com.xy.t_layout.activity.multiflowlayout.Activity_03_LayoutScroll;
-import com.xy.t_layout.activity.multiflowlayout.Activity_03_TV;
-import com.xy.t_layout.activity.multiflowlayout.Activity_03_TVScroll;
+import com.xy.t_layout.multiflowlayout.BaseActivity_03;
+import com.xy.t_layout.multiflowlayout.Activity_03LayoutMultiScroll;
+import com.xy.t_layout.multiflowlayout.Activity_03_LayoutScroll;
+import com.xy.t_layout.multiflowlayout.Activity_03_TV;
+import com.xy.t_layout.multiflowlayout.Activity_03_TVScroll;
 
 public class Activity_03_MultiFlowLayout extends BaseActivity_03 {
 

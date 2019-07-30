@@ -24,4 +24,34 @@
         style="@style/style_btn_main"
         android:text="flexboxlayout" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_randomlayout1"
+            style="@style/style_btn_main"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="randomlayout1" />
+
+        <Button
+            android:id="@+id/btn_randomlayout2"
+            style="@style/style_btn_main"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="randomlayout2" />
+
+        <Button
+            android:id="@+id/btn_randomlayout3"
+            style="@style/style_btn_main"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="randomlayout3" />
+
+    </LinearLayout>
+
+
 </LinearLayout>

@@ -1,24 +1,19 @@
-package com.xy.t_layout.activity.multiflowlayout;
+package com.xy.t_layout.multiflowlayout;
 
 import android.os.Bundle;
 import android.view.View;
 
-
 import com.xy.t_layout.R;
-import com.xy.t_layout.view.multiflowlayout.FlowLayoutAdapter;
-import com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Activity_03_LayoutScroll extends BaseActivity_03 {
+public class Activity_03_TVScroll extends BaseActivity_03 {
     private FlowLayoutAdapter<String> flowLayoutAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_03_layout);
-
+        setContentView(R.layout.activity_03_tvscroll);
         List<String> list=new ArrayList<>();
         list.add("环境");
         list.add("环境");
@@ -104,23 +99,21 @@ public class Activity_03_LayoutScroll extends BaseActivity_03 {
         list.add("发然后");
         list.add("环的风格让他很认同和境");
         list.add("的富贵华庭");
-        flowLayoutAdapter = new FlowLayoutAdapter<String>(list) {
+        flowLayoutAdapter=new FlowLayoutAdapter<String>(list) {
             @Override
             public void bindDataToView(ViewHolder holder, int position, String bean) {
-
                 holder.setText(R.id.tv,bean);
             }
 
             @Override
             public void onItemClick(int position, String bean) {
 
-                remove(position);
-
+                showToast("点击"+position);
             }
 
             @Override
             public int getItemLayoutID(int position, String bean) {
-                return R.layout.layout_03_item_tv_del_top_right;
+                return R.layout.layout_item_tv;
             }
         };
         ((FlowLayoutScrollView)findViewById(R.id.flsv)).setAdapter(flowLayoutAdapter);

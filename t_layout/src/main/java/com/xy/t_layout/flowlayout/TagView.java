@@ -1,4 +1,4 @@
-package com.xy.t_layout.view.flowlayout;
+package com.xy.t_layout.flowlayout;
 
 import android.content.Context;
 import android.view.View;

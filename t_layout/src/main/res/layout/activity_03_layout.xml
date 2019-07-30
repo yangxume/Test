@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:padding="6dp">
 
-    <com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView
+    <com.xy.t_layout.multiflowlayout.FlowLayoutScrollView
         android:id="@+id/flsv"
         android:layout_width="765dp"
         android:layout_height="149dp"
         android:padding="6dp">
 
-    </com.xy.t_layout.view.multiflowlayout.FlowLayoutScrollView>
+    </com.xy.t_layout.multiflowlayout.FlowLayoutScrollView>
 </LinearLayout>

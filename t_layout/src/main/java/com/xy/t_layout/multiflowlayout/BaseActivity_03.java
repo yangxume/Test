@@ -1,4 +1,4 @@
-package com.xy.t_layout.activity.multiflowlayout;
+package com.xy.t_layout.multiflowlayout;
 
 import android.content.Context;
 import android.content.Intent;

@@ -1,9 +1,7 @@
-package com.xy.t_layout.view.flowlayout;
+package com.xy.t_layout.flowlayout;
 
 import android.util.Log;
 import android.view.View;
-
-import com.xy.t_layout.view.flowlayout.FlowLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;

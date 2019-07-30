@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,17 +19,21 @@
 
         <activity android:name=".activity.Activity_01_CoordinatorLayout"/>
 
-        <activity android:name=".activity.Activity_02_FlowLayout"/>
+        <activity android:name=".flowlayout.Activity_02_FlowLayout"/>
 
         <activity android:name=".activity.Activity_03_MultiFlowLayout"/>
 
         <activity android:name=".activity.Activity_04_FlexboxLayout"/>
 
+        <activity android:name=".randomlayout1.Random1Activity"/>
+        <activity android:name=".randomlayout3.Random3Activity"/>
+        <activity android:name=".randomlayout2.Random2Activity"/>
 
-        <activity android:name=".activity.multiflowlayout.Activity_03_TV"/>
-        <activity android:name=".activity.multiflowlayout.Activity_03_TVScroll"/>
-        <activity android:name=".activity.multiflowlayout.Activity_03_LayoutScroll"/>
-        <activity android:name=".activity.multiflowlayout.Activity_03LayoutMultiScroll"/>
+
+        <activity android:name=".multiflowlayout.Activity_03_TV"/>
+        <activity android:name=".multiflowlayout.Activity_03_TVScroll"/>
+        <activity android:name=".multiflowlayout.Activity_03_LayoutScroll"/>
+        <activity android:name=".multiflowlayout.Activity_03LayoutMultiScroll"/>
 
     </application>
 
