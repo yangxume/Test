@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.xy.t_layout.R;
 
-public class Activity_01_CoordinatorLayout extends AppCompatActivity {
+public class ActivityCoordinatorLayout extends AppCompatActivity {
 
 
     @Override

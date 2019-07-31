@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.xy.t_layout.R;
 
-public class Activity_02_FlowLayout extends AppCompatActivity {
+public class ActivityFlowLayout extends AppCompatActivity {
 
 
     private String[] mVals = new String[]
@@ -50,19 +50,19 @@ public class Activity_02_FlowLayout extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_02_flowlayout);
+        setContentView(R.layout.activity_flowlayout);
 
         mFlowLayout = (TagFlowLayout) findViewById(R.id.flowlayout);
         mFlowLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Activity_02_FlowLayout.this,
+                Toast.makeText(ActivityFlowLayout.this,
                         "FlowLayout Clicked",
                         Toast.LENGTH_SHORT).show();
             }
         });
 
-        final LayoutInflater mInflater = LayoutInflater.from(Activity_02_FlowLayout.this);
+        final LayoutInflater mInflater = LayoutInflater.from(ActivityFlowLayout.this);
 
         mFlowLayout.setAdapter(new TagAdapter<String>(mVals) {
             @Override

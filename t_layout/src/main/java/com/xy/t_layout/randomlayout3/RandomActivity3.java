@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
@@ -13,11 +14,30 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.xy.t_layout.R;
-import com.xy.t_layout.util.ColorUtil;
 import com.xy.t_layout.util.ToastUtil;
 
-
-public class Random3Activity extends AppCompatActivity {
+/**
+ * https://github.com/Windsander/AnimatedRandomLayout
+ *
+ * 可操控参数：
+ *   随机生成的周期                  setLooperDuration(int mLooperDuration)
+ *   最大动画时长                    setDefaultDruation(int mDefaultDruation)
+ *   同一时刻随机生成控件的最大个数  setItemShowCount(int itemShowCount)
+ *   随机控件分布网格空间大小        setRegularity(int xRegularity, int yRgularity)
+ *   随机控件总数和显示（类似Adapter）setOnCreateItemViewListener(OnCreateItemViewListener itemViewListener)
+ * #
+ *
+ * 子控件特点：
+ *   对于子控件没有确切的要求，只要是控件父类为 View 类，就可以使用本随机布局添加显示。
+ * #
+ *
+ * 注意：
+ *   如果期望修改动画，可以先自定义动画，随后修改com.special.simplecloudview.random_layout
+ *   文档中CloudRandomLayout.java（即，布局的所在文件）的startZoomAnimation方法即可。
+ *
+ *
+ */
+public class RandomActivity3 extends AppCompatActivity {
 
 	private List<String> list;
 	
@@ -25,7 +45,7 @@ public class Random3Activity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_animated_randomlayout);
+		setContentView(R.layout.activity_randomlayout3);
 		AnimatedRandomLayout cloudRandomLayout = (AnimatedRandomLayout) findViewById(R.id.rl_cloud);
 		
 		
@@ -68,7 +88,8 @@ public class Random3Activity extends AppCompatActivity {
 				Random random = new Random();
 				textView.setTextSize(TypedValue.COMPLEX_UNIT_SP,random.nextInt(8)+24);//14-21
 				//3.上色，设置随机字体颜色
-				textView.setTextColor(ColorUtil.randomColor());
+//				textView.setTextColor(ColorUtil.randomColor());
+				textView.setTextColor(Color.WHITE);
 				//4.设置点击事件
 				textView.setOnClickListener(new OnClickListener() {
 					@Override

@@ -12,22 +12,22 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.Activity_01_CoordinatorLayout"/>
+        <activity android:name=".activity.ActivityCoordinatorLayout"/>
 
-        <activity android:name=".flowlayout.Activity_02_FlowLayout"/>
+        <activity android:name=".flowlayout.ActivityFlowLayout"/>
 
-        <activity android:name=".activity.Activity_03_MultiFlowLayout"/>
+        <activity android:name=".activity.ActivityMultiFlowLayout"/>
 
-        <activity android:name=".activity.Activity_04_FlexboxLayout"/>
+        <activity android:name=".activity.ActivityFlexboxLayout"/>
 
-        <activity android:name=".randomlayout1.Random1Activity"/>
-        <activity android:name=".randomlayout3.Random3Activity"/>
-        <activity android:name=".randomlayout2.Random2Activity"/>
+        <activity android:name=".randomlayout1.RandomActivity1"/>
+        <activity android:name=".randomlayout2.RandomActivity2"/>
+        <activity android:name=".randomlayout3.RandomActivity3"/>
+        <activity android:name=".randomlayout4.RandomActivity4"/>
 
 
         <activity android:name=".multiflowlayout.Activity_03_TV"/>

@@ -10,12 +10,12 @@ import com.xy.t_layout.multiflowlayout.Activity_03_LayoutScroll;
 import com.xy.t_layout.multiflowlayout.Activity_03_TV;
 import com.xy.t_layout.multiflowlayout.Activity_03_TVScroll;
 
-public class Activity_03_MultiFlowLayout extends BaseActivity_03 {
+public class ActivityMultiFlowLayout extends BaseActivity_03 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_03_multi_flow_layout);
+        setContentView(R.layout.activity_multi_flowlayout);
 
         findViewById(R.id.btn_tv).setOnClickListener(this);
         findViewById(R.id.btn_tv_scroll).setOnClickListener(this);

@@ -6,23 +6,32 @@
 
     <Button
         android:id="@+id/btn_coordinatorlayout"
-        style="@style/style_btn_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
         android:text="coordinatorlayout" />
 
-    <Button
-        android:id="@+id/btn_flowlayout"
-        style="@style/style_btn_main"
-        android:text="flowlayout" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_multi_flowlayout"
-        style="@style/style_btn_main"
-        android:text="multi_flowlayout" />
+        <Button
+            android:id="@+id/btn_flowlayout"
+            style="@style/style_btn_main"
+            android:text="flowlayout" />
 
-    <Button
-        android:id="@+id/btn_flexboxlayout"
-        style="@style/style_btn_main"
-        android:text="flexboxlayout" />
+        <Button
+            android:id="@+id/btn_multi_flowlayout"
+            style="@style/style_btn_main"
+            android:text="multi_flowlayout" />
+
+        <Button
+            android:id="@+id/btn_flexboxlayout"
+            style="@style/style_btn_main"
+            android:text="flexboxlayout" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,6 +59,13 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="randomlayout3" />
+
+        <Button
+            android:id="@+id/btn_randomlayout4"
+            style="@style/style_btn_main"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="randomlayout4" />
 
     </LinearLayout>
 

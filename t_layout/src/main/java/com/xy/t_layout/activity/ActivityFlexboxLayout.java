@@ -18,10 +18,10 @@ import com.xy.t_layout.bean.Grade;
 /**
  * https://www.jianshu.com/p/217b3f4a1a18
  */
-public class Activity_04_FlexboxLayout extends AppCompatActivity {
+public class ActivityFlexboxLayout extends AppCompatActivity {
 
 
-    private static final String TAG = Activity_04_FlexboxLayout.class.getSimpleName();
+    private static final String TAG = ActivityFlexboxLayout.class.getSimpleName();
 
     private String[] gradeNames = new String[]
             {
@@ -59,7 +59,7 @@ public class Activity_04_FlexboxLayout extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_04_flexboxlayout);
+        setContentView(R.layout.activity_flexboxlayout);
 
         flexboxLayout = (FlexboxLayout) findViewById(R.id.flexbox_layout);
         for (int i = 0; i < gradeNames.length; i++) {

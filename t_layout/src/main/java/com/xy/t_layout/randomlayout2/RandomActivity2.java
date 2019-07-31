@@ -15,7 +15,11 @@ import com.shitou.googleplay.lib.randomlayout.StellarMap;
 import com.shitou.googleplay.lib.randomlayout.StellarMap.Adapter;
 import com.xy.t_layout.R;
 
-public class Random2Activity extends AppCompatActivity {
+
+/**
+ * https://github.com/qiushi123/randomlayout
+ */
+public class RandomActivity2 extends AppCompatActivity {
 
 	private StellarMap stellarMap;
 	private ArrayList<String> list = new ArrayList<String>();
@@ -69,7 +73,7 @@ public class Random2Activity extends AppCompatActivity {
 		 */
 		@Override
 		public View getView(int group, int position, View convertView) {
-			final TextView textView = new TextView(Random2Activity.this);
+			final TextView textView = new TextView(RandomActivity2.this);
 			// 根据group和组中的position计算出对应的在list中的位置
 			int listPosition = group * getCount(group) + position;
 			textView.setText(list.get(listPosition));
@@ -83,7 +87,8 @@ public class Random2Activity extends AppCompatActivity {
 			int red = random.nextInt(150) + 50;// 50-199
 			int green = random.nextInt(150) + 50;// 50-199
 			int blue = random.nextInt(150) + 50;// 50-199
-			int textColor = Color.rgb(red, green, blue);// 在rgb三原色的基础上混合出一种新的颜色
+//			int textColor = Color.rgb(red, green, blue);// 在rgb三原色的基础上混合出一种新的颜色
+			int textColor = Color.WHITE;
 			textView.setTextColor(textColor);
 			return textView;
 		}

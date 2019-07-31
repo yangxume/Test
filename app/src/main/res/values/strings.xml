@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test-App</string>
+    <string name="app_name">T-App</string>
     <string name="str_splice_bitmap">1.图片拼接测试</string>
     <string name="str_popupwindow">2.popupwindow</string>
 </resources>
