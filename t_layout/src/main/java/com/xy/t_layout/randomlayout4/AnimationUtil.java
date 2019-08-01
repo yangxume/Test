@@ -60,7 +60,7 @@ public class AnimationUtil {
 		// 创建一个缩小的动画
 		anim = new ScaleAnimation(3, 1, 3, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 //		anim.setDuration(MEDIUM);
-		anim.setDuration(2000);
+		anim.setDuration(3500);
 		anim.setInterpolator(new DecelerateInterpolator());
 		ret.addAnimation(anim);
 		return ret;

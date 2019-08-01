@@ -61,7 +61,7 @@ public class RandomActivity4 extends AppCompatActivity {
         // 设置x和y方向上的显示的密度
         stellarMap.setRegularity(15, 15);// 如果值设置的过大，有可能造成子View摆放比较稀疏
 
-        stellarMap.startAnimation(AnimationUtil.createZoomOutNearAnim());
+//        stellarMap.startAnimation(AnimationUtil.createZoomOutNearAnim());
 
         // 把fragment显示至界面,new出fragment对象
         FrameLayout fl = (FrameLayout) findViewById(R.id.fl);
