@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.xy.t_layout.activity.ActivityCoordinatorLayout;
-import com.xy.t_layout.activity.ActivityMultiFlowLayout;
 import com.xy.t_layout.activity.ActivityFlexboxLayout;
+import com.xy.t_layout.activity.ActivityMultiFlowLayout;
 import com.xy.t_layout.flowlayout.ActivityFlowLayout;
+import com.xy.t_layout.keywordsflow.KeywordsFlowActivity;
 import com.xy.t_layout.randomlayout1.RandomActivity1;
 import com.xy.t_layout.randomlayout2.RandomActivity2;
 import com.xy.t_layout.randomlayout3.RandomActivity3;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnRandomlayout3;
     @BindView(R.id.btn_randomlayout4)
     Button btnRandomlayout4;
+    @BindView(R.id.btn_keywordsflow)
+    Button btnKeywordsflow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_randomlayout1,
             R.id.btn_randomlayout2,
             R.id.btn_randomlayout3,
-            R.id.btn_randomlayout4
+            R.id.btn_randomlayout4,
+            R.id.btn_keywordsflow
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -77,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_randomlayout4:
                 startActivity(new Intent(MainActivity.this, RandomActivity4.class));
+                break;
+            case R.id.btn_keywordsflow:
+                startActivity(new Intent(MainActivity.this, KeywordsFlowActivity.class));
                 break;
         }
     }

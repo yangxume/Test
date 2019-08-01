@@ -10,6 +10,7 @@ import android.graphics.Point;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.FrameLayout;
@@ -28,13 +29,15 @@ import com.xy.t_layout.util.LogUtil;
  * 				 -> setDefaultDruation </br>
  * 				 -> setOnCreateItemViewListener( getCount ; createItemView )
  * @attention
- * 使用此随机布局，必须重写{@link OnCreateItemViewListener}回调接口的{@link createItemView}
+ * 使用此随机布局，必须重写{@link OnCreateItemViewListener}回调接口的{@link }
  * 方法，来定义用于随机布局的子控件
  * @author Windsander
  *
  */
 @SuppressLint("HandlerLeak")
 public class AnimatedRandomLayout extends FrameLayout {
+
+	private static final String TAG = AnimatedRandomLayout.class.getSimpleName();
 	
 //参数声明/**************************************************************************************/
 	/** 用于生成随机偏移量的Random对象 */
@@ -91,6 +94,7 @@ public class AnimatedRandomLayout extends FrameLayout {
 			}
 		};
 	}
+
 
 	
 //构造方法/**************************************************************************************/
@@ -199,6 +203,9 @@ public class AnimatedRandomLayout extends FrameLayout {
 		//确定可供显示的区域大小
 		int thisW = r - l - this.getPaddingLeft() - this.getPaddingRight();
 		int thisH = b - t - this.getPaddingTop() - this.getPaddingBottom();
+
+		Log.e(TAG, "onLayout: W:"+thisW+"  H:" +thisH);
+
 		//计算当前布局中心
 		mCenter.x = thisW / 2;
 		mCenter.y = thisH / 2;
@@ -318,6 +325,13 @@ public class AnimatedRandomLayout extends FrameLayout {
 	protected void onDetachedFromWindow() {
 		handler.removeCallbacksAndMessages(null);
 		super.onDetachedFromWindow();
+	}
+
+	public void cancelAnimation(){
+
+		if (handler != null){
+			handler.removeCallbacksAndMessages(null);
+		}
 	}
 
 	
@@ -536,7 +550,7 @@ public class AnimatedRandomLayout extends FrameLayout {
 	private OnCreateItemViewListener onCreateItemViewListener;
 
 	/**
-	 * 用于监听布局生成用于显示的子控件，使用布局，必须重写该监听的 {@link createItemView} 方法
+	 * 用于监听布局生成用于显示的子控件，使用布局，必须重写该监听的 {@link } 方法
 	 */
 	public static interface OnCreateItemViewListener{
 		public int getCount();  //设置用于显示的子控件数目

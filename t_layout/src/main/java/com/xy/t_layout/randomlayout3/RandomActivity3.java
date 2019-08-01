@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.airbnb.lottie.L;
@@ -45,7 +46,8 @@ import com.xy.t_layout.util.ToastUtil;
  *
  *
  */
-public class RandomActivity3 extends AppCompatActivity {
+public class RandomActivity3 extends AppCompatActivity
+implements OnClickListener{
 
 	String[] str1 = {"1","2","3","4","5","6","7","8","9","10","a","b","c","d","e","f","g","h","i",
 			"j","k","l","m","n","o","p","r","s","u","v","w","x","y","z"};
@@ -53,12 +55,13 @@ public class RandomActivity3 extends AppCompatActivity {
 	String[] str2 = new String[]{
 			"博鳌亚洲论坛", "哈佛商业评论", "财经国家周刊", "每日经济新闻",
 			"中国企业家", "路透中文网", "国际金融报",
-			"中国证券网", "中国经营报", "经济观察报", "中国经济网",
-			"印度去年四季度GDP增7.3% 领跑全"};
+			"中国证券网", "中国经营报", "经济观察报", "中国经济网"};
 
 	private List<String> list;
 	private LottieAnimationView lottieLike;
 	private AnimatedRandomLayout animatedRandomLayout;
+
+	private Button btn_start,btn_pause,btn_stop;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +111,13 @@ public class RandomActivity3 extends AppCompatActivity {
 		lottieLike = findViewById(R.id.lottie_likeanim);
 		animatedRandomLayout = (AnimatedRandomLayout) findViewById(R.id.rl_cloud);
 
+		btn_start = findViewById(R.id.btn_start);
+		btn_pause= findViewById(R.id.btn_pause);
+		btn_stop = findViewById(R.id.btn_stop);
+
+		btn_start.setOnClickListener(this);
+		btn_pause.setOnClickListener(this);
+		btn_stop.setOnClickListener(this);
 	}
 
 	private void testRandomLayout() {
@@ -116,7 +126,7 @@ public class RandomActivity3 extends AppCompatActivity {
 		animatedRandomLayout.setRegularity(15, 15);
 		animatedRandomLayout.setItemShowCount(2);
 		animatedRandomLayout.setLooperDuration(100);
-		animatedRandomLayout.setDefaultDruation(3500);
+		animatedRandomLayout.setDefaultDruation(10000);
 
 		animatedRandomLayout.setOnCreateItemViewListener(new AnimatedRandomLayout.OnCreateItemViewListener() {
 
@@ -163,5 +173,36 @@ public class RandomActivity3 extends AppCompatActivity {
 
 	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
 
+		if (animatedRandomLayout != null){
+			animatedRandomLayout.cancelAnimation();
+		}
+
+	}
+
+	@Override
+	public void onClick(View v) {
+
+		int id = v.getId();
+
+		switch (id){
+
+			case R.id.btn_start:
+				lottieLike.playAnimation();
+				break;
+
+			case R.id.btn_pause:
+				lottieLike.pauseAnimation();
+				break;
+
+			case R.id.btn_stop:
+				lottieLike.cancelAnimation();
+				break;
+
+		}
+
+	}
 }

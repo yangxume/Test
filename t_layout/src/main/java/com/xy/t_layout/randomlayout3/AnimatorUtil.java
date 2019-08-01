@@ -69,6 +69,10 @@ public class AnimatorUtil {
 	public void startAnimator(){
 		animate.start();
 	}
+
+	public void stopAnimator(){
+		animate.cancel();
+	}
 	
 }
 
