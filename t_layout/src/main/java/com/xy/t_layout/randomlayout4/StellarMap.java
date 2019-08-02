@@ -11,13 +11,12 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.FrameLayout;
 
-import com.xy.t_layout.randomlayout3.AnimatorUtil;
 
 public class StellarMap extends FrameLayout implements AnimationListener, OnTouchListener, OnGestureListener {
 
-	private RandomLayout4 mHidenGroup;
+	private RandomLayout4			mHidenGroup;
 
-	private RandomLayout4 mShownGroup;
+	private RandomLayout4			mShownGroup;
 
 	private Adapter					mAdapter;
 	private RandomLayout4.Adapter	mShownGroupAdapter;
@@ -62,9 +61,9 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 		mHidenGroup = new RandomLayout4(getContext());
 		mShownGroup = new RandomLayout4(getContext());
 
-		addView(mHidenGroup, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		addView(mHidenGroup, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 		mHidenGroup.setVisibility(View.GONE);
-		addView(mShownGroup, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		addView(mShownGroup, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 
 		mGestureDetector = new GestureDetector(this);
 		setOnTouchListener(this);
@@ -228,15 +227,7 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 		boolean hasLayoutedBefore = mShownGroup.hasLayouted();
 		super.onLayout(changed, l, t, r, b);
 		if (!hasLayoutedBefore && mShownGroup.hasLayouted()) {
-//			mShownGroup.startAnimation(mZoomInNearAnim);// 第一次layout的时候启动动画
-//			mShownGroup.startAnimation(mZoomOutAwayAnim);// 第一次layout的时候启动动画
-
-			AnimatorUtil animatorUtils = new AnimatorUtil(mShownGroup, 2000);
-			animatorUtils.addAlphaAnimationBy(-1.0f)
-					.addTranslationAnimationBy(1920/2, 1164/2)
-					.addScaleAnimationBy(-0.8f)
-					.startAnimator();
-
+			mShownGroup.startAnimation(mZoomInNearAnim);// 第一次layout的时候启动动画
 		} else {
 			mShownGroup.setVisibility(View.VISIBLE);
 		}

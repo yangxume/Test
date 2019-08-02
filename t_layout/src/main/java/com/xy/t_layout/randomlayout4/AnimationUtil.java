@@ -9,7 +9,7 @@ import android.view.animation.ScaleAnimation;
 
 public class AnimationUtil {
 
-	private static final long	MEDIUM	= 500;
+	private static final long	MEDIUM	= 5000;
 
 	/** 创建一个淡入放大的动画 */
 	public static Animation createZoomInNearAnim() {
@@ -59,9 +59,8 @@ public class AnimationUtil {
 		ret.addAnimation(anim);
 		// 创建一个缩小的动画
 		anim = new ScaleAnimation(3, 1, 3, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//		anim.setDuration(MEDIUM);
+		anim.setDuration(MEDIUM);
 		anim.setRepeatMode(Animation.RESTART);
-		anim.setDuration(3500);
 		anim.setInterpolator(new DecelerateInterpolator());
 		ret.addAnimation(anim);
 		return ret;

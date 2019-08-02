@@ -67,6 +67,9 @@ public class RandomActivity4 extends AppCompatActivity {
         FrameLayout fl = (FrameLayout) findViewById(R.id.fl);
         fl.addView(stellarMap);
 
+//        stellarMap.zoomIn();
+        stellarMap.zoomOut();
+
     }
 
     class StellarMapAdapter implements StellarMap.Adapter {
