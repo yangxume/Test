@@ -144,10 +144,10 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 	}
 
 	/** 给Group设置动画入 */
-	public void zoomIn() {
-		final int nextGroupIndex = mAdapter.getNextGroupOnZoom(mShownGroupIndex, true);
-		switchGroup(nextGroupIndex, true, mZoomInNearAnim, mZoomInAwayAnim);
-	}
+//	public void zoomIn() {
+//		final int nextGroupIndex = mAdapter.getNextGroupOnZoom(mShownGroupIndex, true);
+//		switchGroup(nextGroupIndex, true, mZoomInNearAnim, mZoomInAwayAnim);
+//	}
 
 	/** 给Group设置出动画 */
 	public void zoomOut() {
@@ -187,9 +187,9 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 
 		// 启动动画
 		if (playAnimation) {
-			if (mShownGroup.hasLayouted()) {
-				mShownGroup.startAnimation(inAnim);
-			}
+//			if (mShownGroup.hasLayouted()) {
+//				mShownGroup.startAnimation(inAnim);
+//			}
 			mHidenGroup.startAnimation(outAnim);
 		} else {
 			mHidenGroup.setVisibility(View.GONE);
@@ -209,10 +209,16 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 
 	@Override
 	public void onAnimationEnd(Animation animation) {
+
+		zoomOut();
+
 		// 当动画结束
-		if (animation == mZoomInAwayAnim || animation == mZoomOutAwayAnim || animation == mPanOutAnim) {
-			mHidenGroup.setVisibility(View.GONE);
-		}
+//		if (animation == mZoomInAwayAnim ||
+//				animation == mZoomOutAwayAnim ||
+//				animation == mPanOutAnim) {
+//			mHidenGroup.setVisibility(View.GONE);
+//			zoomOut();
+//		}
 	}
 
 	@Override
@@ -227,7 +233,7 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 		boolean hasLayoutedBefore = mShownGroup.hasLayouted();
 		super.onLayout(changed, l, t, r, b);
 		if (!hasLayoutedBefore && mShownGroup.hasLayouted()) {
-			mShownGroup.startAnimation(mZoomInNearAnim);// 第一次layout的时候启动动画
+			mShownGroup.startAnimation(mZoomOutAwayAnim);// 第一次layout的时候启动动画
 		} else {
 			mShownGroup.setVisibility(View.VISIBLE);
 		}
@@ -278,7 +284,7 @@ public class StellarMap extends FrameLayout implements AnimationListener, OnTouc
 		if ((x1 * x1 + y1 * y1) > (x2 * x2 + y2 * y2)) {
 			zoomOut();
 		} else {
-			zoomIn();
+//			zoomIn();
 		}
 		return true;
 	}

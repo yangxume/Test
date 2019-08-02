@@ -1,5 +1,6 @@
 package com.xy.t_layout.randomlayout4;
 
+import android.animation.Animator;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.xy.t_layout.R;
 
 import java.util.ArrayList;
@@ -42,6 +44,13 @@ public class RandomActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_randomlayout4);
 
+        testLottieAnim();
+
+        testRandomLayout();
+
+    }
+
+    private void testRandomLayout() {
         list = new ArrayList<>();
 
         // 简单的设置要显示的文字源
@@ -68,9 +77,45 @@ public class RandomActivity4 extends AppCompatActivity {
         fl.addView(stellarMap);
 
 //        stellarMap.zoomIn();
-        stellarMap.zoomOut();
+//        stellarMap.zoomOut();
+
 
     }
+
+    private LottieAnimationView lottieLike;
+
+    private void testLottieAnim() {
+
+        lottieLike = findViewById(R.id.lottie_likeanim);
+
+        lottieLike.playAnimation();  //播放
+//		lottieLike.pauseAnimation(); //暂停
+//		lottieLike.cancelAnimation(); //取消
+//		lottieLike.getDuration();  //获取动画时长
+        lottieLike.addAnimatorListener(new Animator.AnimatorListener() { //添加动画监听
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+    }
+
 
     class StellarMapAdapter implements StellarMap.Adapter {
         /**
@@ -132,7 +177,6 @@ public class RandomActivity4 extends AppCompatActivity {
         }
 
     }
-
 
 
 }
