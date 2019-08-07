@@ -1,10 +1,10 @@
 package com.xy.t_layout.value_anim;
 
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.xy.t_layout.R;
 import com.xy.t_layout.randomlayout3.AnimatorUtil;
 
@@ -32,7 +33,7 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     private static final String TAG = ValueAnimationActivity.class.getSimpleName();
 
-    private TextView textview,tv2;
+    private TextView tv1,tv2,tv3,tv4,tv5,tv6;
     private MyAnimView myanimview;
 
     private Button btn_alpha;
@@ -41,18 +42,37 @@ public class ValueAnimationActivity extends AppCompatActivity
     private Button btn_translation;
     private Button btn_anim_set;
 
+    private LottieAnimationView lottie_anim_view;
+
+    int delay = 500;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
 
         initView();
+
+        testLottieAnim();
+
+        goSWCenter(tv1,tv2,945,452,2*delay);
+        goSWCenter(tv2,tv3,-945,452,4*delay);
+        goSWCenter(tv3,tv4,945,0,6*delay);
+        goSWCenter(tv4,tv5,-945,0,8*delay);
+        goSWCenter(tv5,tv6,945,-452,10*delay);
+        goSWCenter(tv6,tv6,-945,-452,12*delay);
+
     }
 
     private void initView() {
 
-        textview = findViewById(R.id.textview);
+        tv1 = findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
+        tv3 = findViewById(R.id.tv3);
+        tv4 = findViewById(R.id.tv4);
+        tv5 = findViewById(R.id.tv5);
+        tv6 = findViewById(R.id.tv6);
+
 //        myanimview = findViewById(R.id.myanimview);
 
         btn_alpha = findViewById(R.id.btn_alpha);
@@ -77,31 +97,35 @@ public class ValueAnimationActivity extends AppCompatActivity
 
             case R.id.btn_alpha:
 
-                animAlpha(textview);
+                animAlpha(tv1);
 
                 break;
             case R.id.btn_rotation:
 
-                animRotation(textview);
+                animRotation(tv1);
 
                 break;
             case R.id.btn_scale:
 
-                animScaleY(textview);
+                animScaleY(tv1);
 
                 break;
 
             case R.id.btn_translation:
 
-//                animTranslation(textview);
-                goSWCenter(textview);
-                goSWCenter2(tv2);
+
+                goSWCenter(tv1,tv2,945,452,2*delay);
+                goSWCenter(tv2,tv3,-945,452,4*delay);
+                goSWCenter(tv3,tv4,945,0,6*delay);
+                goSWCenter(tv4,tv5,-945,0,8*delay);
+                goSWCenter(tv5,tv6,945,-452,10*delay);
+                goSWCenter(tv6,tv6,-945,942,12*delay);
 
                 break;
 
             case R.id.btn_anim_set:
 
-                animSet(textview);
+                animSet(tv1);
 
                 break;
 
@@ -140,7 +164,7 @@ public class ValueAnimationActivity extends AppCompatActivity
 //        moveIn.start();
 
 
-        ObjectAnimator anim = ObjectAnimator.ofObject(textview, "color", new ColorEvaluator(),
+        ObjectAnimator anim = ObjectAnimator.ofObject(tv1, "color", new ColorEvaluator(),
                 "#0000FF", "#FF0000");
         anim.setDuration(5000);
         anim.start();
@@ -168,25 +192,76 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     }
 
+    public static void goSWCenter(View view, final View nextView, int endx, int endY, long delay) {
 
-    private void goSWCenter(View view) {
-
-        AnimatorUtil animatorUtils = new AnimatorUtil(view, 3500);
+        AnimatorUtil animatorUtils = new AnimatorUtil(view, 1500);
+        animatorUtils.getAnimate().setStartDelay(delay);
         animatorUtils.addAlphaAnimationBy(-1.0f)
-                .addTranslationAnimationBy(945, 452)
+                .addTranslationAnimationBy(endx, endY)
                 .addScaleAnimationBy(-0.8f)
                 .startAnimator();
 
+        animatorUtils.getAnimate().setListener(new com.nineoldandroids.animation.Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(com.nineoldandroids.animation.Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(com.nineoldandroids.animation.Animator animator) {
+                nextView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(com.nineoldandroids.animation.Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(com.nineoldandroids.animation.Animator animator) {
+
+            }
+        });
     }
 
-    private void goSWCenter2(View view) {
+    private void goCenter1(){
 
-        AnimatorUtil animatorUtils = new AnimatorUtil(view, 3500);
-        animatorUtils.getAnimate().setStartDelay(3000);
-        animatorUtils.addAlphaAnimationBy(-1.0f)
-                .addTranslationAnimationBy(-945, 452)
-                .addScaleAnimationBy(-0.8f)
-                .startAnimator();
+//        Animator animator = AnimatorInflater.loadAnimator(this, R.);
+//        animator.setTarget(textview);
+//        animator.start();
 
     }
+
+    private void testLottieAnim() {
+
+        lottie_anim_view = findViewById(R.id.lottie_anim_view);
+
+        lottie_anim_view.playAnimation();  //播放
+//		lottilottie_anim_vieweLike.pauseAnimation(); //暂停
+//		lottie_anim_view.cancelAnimation(); //取消
+//		lottie_anim_view.getDuration();  //获取动画时长
+        lottie_anim_view.addAnimatorListener(new Animator.AnimatorListener() { //添加动画监听
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+    }
+
 }

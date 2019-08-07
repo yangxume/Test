@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_main"
     android:layout_width="match_parent"
+    android:background="@mipmap/personal_main_background"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/ll_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,42 +42,65 @@
 
     </LinearLayout>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_anim_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_fileName="data.json"
+        app:lottie_loop="true"
+        android:layout_centerInParent="true"/>
 
     <RelativeLayout
-        android:background="@android:color/darker_gray"
         android:layout_width="match_parent"
-        android:layout_below="@id/ll_btn"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_btn">
 
         <TextView
-            android:id="@+id/textview"
-            android:background="@android:color/holo_orange_light"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="text"
-            android:gravity="center"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="20sp" />
+            android:id="@+id/tv1"
+            android:visibility="visible"
+            android:text="一元二次方程"
+            style="@style/style_tv"/>
 
         <TextView
             android:id="@+id/tv2"
-            android:background="@android:color/holo_orange_light"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="text"
+            style="@style/style_tv"
+            android:text="能量守恒定律"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/tv3"
+            style="@style/style_tv"
+            android:text="光对反射与折射"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv4"
+            style="@style/style_tv"
+            android:text="三角函数"
             android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="20sp" />
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv5"
+            style="@style/style_tv"
+            android:text="我与地坛"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:id="@+id/tv6"
+            style="@style/style_tv"
+            android:text="再别康桥"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
 
         <!--<com.xy.t_layout.value_anim.MyAnimView-->
-            <!--android:id="@+id/myanimview"-->
-            <!--android:visibility="visible"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_below="@id/textview"-->
-            <!--android:layout_height="wrap_content" />-->
+        <!--android:id="@+id/myanimview"-->
+        <!--android:visibility="visible"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_below="@id/textview"-->
+        <!--android:layout_height="wrap_content" />-->
 
     </RelativeLayout>
 
-
-</RelativeLayout>
+</FrameLayout>

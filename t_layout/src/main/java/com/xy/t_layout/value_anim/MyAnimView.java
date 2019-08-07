@@ -70,16 +70,16 @@ public class MyAnimView extends View {
 //    private void startAnimation() {
 //        Point startPoint = new Point(RADIUS, RADIUS);
 //        Point endPoint = new Point(getWidth() - RADIUS, getHeight() - RADIUS);
-//        ValueAnimator anim = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
-//        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//        ValueAnimator animator = ValueAnimator.ofObject(new PointEvaluator(), startPoint, endPoint);
+//        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 //            @Override
 //            public void onAnimationUpdate(ValueAnimator animation) {
 //                currentPoint = (Point) animation.getAnimatedValue();
 //                invalidate();
 //            }
 //        });
-//        anim.setDuration(5000);
-//        anim.start();
+//        animator.setDuration(5000);
+//        animator.start();
 //    }
 
 
