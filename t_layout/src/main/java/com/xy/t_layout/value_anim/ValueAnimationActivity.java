@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.xy.t_layout.R;
+import com.xy.t_layout.randomlayout3.AnimatorUtil;
 
 /**
  * @ProjectName: Test
@@ -31,14 +32,14 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     private static final String TAG = ValueAnimationActivity.class.getSimpleName();
 
-    private TextView textview;
+    private TextView textview,tv2;
+    private MyAnimView myanimview;
 
     private Button btn_alpha;
     private Button btn_rotation;
     private Button btn_scale;
     private Button btn_translation;
     private Button btn_anim_set;
-    private MyAnimView myAnimView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,13 +52,14 @@ public class ValueAnimationActivity extends AppCompatActivity
     private void initView() {
 
         textview = findViewById(R.id.textview);
+        tv2 = findViewById(R.id.tv2);
+//        myanimview = findViewById(R.id.myanimview);
 
         btn_alpha = findViewById(R.id.btn_alpha);
         btn_rotation = findViewById(R.id.btn_rotation);
         btn_scale = findViewById(R.id.btn_scale);
         btn_translation = findViewById(R.id.btn_translation);
         btn_anim_set = findViewById(R.id.btn_anim_set);
-        myAnimView = findViewById(R.id.myanimview);
 
         btn_alpha.setOnClickListener(this);
         btn_rotation.setOnClickListener(this);
@@ -91,7 +93,9 @@ public class ValueAnimationActivity extends AppCompatActivity
 
             case R.id.btn_translation:
 
-                animTranslation(textview);
+//                animTranslation(textview);
+                goSWCenter(textview);
+                goSWCenter2(tv2);
 
                 break;
 
@@ -136,7 +140,7 @@ public class ValueAnimationActivity extends AppCompatActivity
 //        moveIn.start();
 
 
-        ObjectAnimator anim = ObjectAnimator.ofObject(myAnimView, "color", new ColorEvaluator(),
+        ObjectAnimator anim = ObjectAnimator.ofObject(textview, "color", new ColorEvaluator(),
                 "#0000FF", "#FF0000");
         anim.setDuration(5000);
         anim.start();
@@ -164,6 +168,25 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     }
 
-//
 
+    private void goSWCenter(View view) {
+
+        AnimatorUtil animatorUtils = new AnimatorUtil(view, 3500);
+        animatorUtils.addAlphaAnimationBy(-1.0f)
+                .addTranslationAnimationBy(945, 452)
+                .addScaleAnimationBy(-0.8f)
+                .startAnimator();
+
+    }
+
+    private void goSWCenter2(View view) {
+
+        AnimatorUtil animatorUtils = new AnimatorUtil(view, 3500);
+        animatorUtils.getAnimate().setStartDelay(3000);
+        animatorUtils.addAlphaAnimationBy(-1.0f)
+                .addTranslationAnimationBy(-945, 452)
+                .addScaleAnimationBy(-0.8f)
+                .startAnimator();
+
+    }
 }
