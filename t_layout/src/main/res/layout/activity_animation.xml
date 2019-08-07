@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/darker_gray"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_alpha"
+            style="@style/style_btn_main"
+            android:text="alpha" />
+
+        <Button
+            android:id="@+id/btn_rotation"
+            style="@style/style_btn_main"
+            android:text="rotation" />
+
+        <Button
+            android:id="@+id/btn_scale"
+            style="@style/style_btn_main"
+            android:text="scale" />
+
+        <Button
+            android:id="@+id/btn_translation"
+            style="@style/style_btn_main"
+            android:text="translationX" />
+
+        <Button
+            android:id="@+id/btn_anim_set"
+            style="@style/style_btn_main"
+            android:text="anim_set" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_below="@id/ll_btn"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textview"
+            android:background="@android:color/holo_orange_light"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="text"
+            android:gravity="center"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="20sp" />
+
+        <com.xy.t_layout.value_anim.MyAnimView
+            android:id="@+id/myanimview"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/textview"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

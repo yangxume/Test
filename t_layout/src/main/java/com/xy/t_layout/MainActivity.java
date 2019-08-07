@@ -15,6 +15,7 @@ import com.xy.t_layout.randomlayout1.RandomActivity1;
 import com.xy.t_layout.randomlayout2.RandomActivity2;
 import com.xy.t_layout.randomlayout3.RandomActivity3;
 import com.xy.t_layout.randomlayout4.RandomActivity4;
+import com.xy.t_layout.value_anim.ValueAnimationActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnRandomlayout4;
     @BindView(R.id.btn_keywordsflow)
     Button btnKeywordsflow;
+    @BindView(R.id.btn_value_anim)
+    Button btnValueAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
             R.id.btn_randomlayout2,
             R.id.btn_randomlayout3,
             R.id.btn_randomlayout4,
-            R.id.btn_keywordsflow
+            R.id.btn_keywordsflow,
+            R.id.btn_value_anim
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -84,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_keywordsflow:
                 startActivity(new Intent(MainActivity.this, KeywordsFlowActivity.class));
+                break;
+            case R.id.btn_value_anim:
+                startActivity(new Intent(MainActivity.this, ValueAnimationActivity.class));
                 break;
         }
     }

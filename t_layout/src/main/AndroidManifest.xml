@@ -29,6 +29,7 @@
         <activity android:name=".randomlayout3.RandomActivity3"/>
         <activity android:name=".randomlayout4.RandomActivity4"/>
         <activity android:name=".keywordsflow.KeywordsFlowActivity"/>
+        <activity android:name=".value_anim.ValueAnimationActivity"/>
 
 
         <activity android:name=".multiflowlayout.Activity_03_TV"/>
