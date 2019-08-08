@@ -35,7 +35,7 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     private static final String TAG = ValueAnimationActivity.class.getSimpleName();
 
-    private TextView tv1,tv2,tv3,tv4,tv5,tv6;
+    private TextView tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8;
     private MyAnimView myanimview;
 
     private Button btn_alpha;
@@ -46,7 +46,7 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     private LottieAnimationView lottie_anim_view;
 
-    private int delay = 1000;
+    private int delay = 500;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,15 +54,18 @@ public class ValueAnimationActivity extends AppCompatActivity
         setContentView(R.layout.activity_animation2);
 
         initView();
-//
-//        testLottieAnim();
-//
-//        goSWCenter(tv1,tv2,-962,-615,0);
-//        goSWCenter(tv2,tv3,949,582,2*delay);
-//        goSWCenter(tv3,tv4,956,-601,3*delay);
-//        goSWCenter(tv4,tv5,-956,613,4*delay);
-//        goSWCenter(tv5,tv6,-326,571,5*delay);
-//        goSWCenter(tv6,tv6,-369,-634,6*delay);
+
+        testLottieAnim();
+
+        goSWCenter(tv1,tv2,-962,-615,0);
+        goSWCenter(tv2,tv3,949,582,1*delay);
+        goSWCenter(tv3,tv4,956,-601,2*delay);
+        goSWCenter(tv4,tv5,-956,613,3*delay);
+        goSWCenter(tv5,tv6,-26,571,4*delay);
+        goSWCenter(tv6,tv6,0,-634,5*delay);
+        goSWCenter(tv6,tv6,0,-634,6*delay);
+        goSWCenter(tv7,tv8,-949,0,7*delay);
+        goSWCenter(tv8,tv8,949,0,8*delay);
 
     }
 
@@ -74,6 +77,9 @@ public class ValueAnimationActivity extends AppCompatActivity
         tv4 = findViewById(R.id.tv4);
         tv5 = findViewById(R.id.tv5);
         tv6 = findViewById(R.id.tv6);
+        tv7 = findViewById(R.id.tv7);
+
+        tv8 = findViewById(R.id.tv8);
 
 //        WidgetController.setLayoutX(tv1,1364);
 //        WidgetController.setLayoutY(tv1,1324);

@@ -11,14 +11,14 @@
         <TextView
             android:id="@+id/tv1"
             style="@style/style_tv"
-            android:layout_x="1364px"
+            android:layout_x="1564px"
             android:layout_y="1024px"
             android:text="知识点一" />
 
         <TextView
             android:id="@+id/tv2"
             style="@style/style_tv"
-            android:layout_x="68px"
+            android:layout_x="40px"
             android:layout_y="104px"
             android:text="知识点二" />
 
@@ -32,25 +32,37 @@
         <TextView
             android:id="@+id/tv4"
             style="@style/style_tv"
-            android:layout_x="1364px"
-            android:layout_y="144px"
+            android:layout_x="1564px"
+            android:layout_y="104px"
             android:text="知识点四" />
 
         <TextView
             android:id="@+id/tv5"
             style="@style/style_tv"
             android:layout_x="692px"
-            android:layout_y="156px"
+            android:layout_y="104px"
             android:text="知识点五" />
 
         <TextView
             android:id="@+id/tv6"
             style="@style/style_tv"
-            android:layout_x="1004px"
+            android:layout_x="692px"
             android:layout_y="1028px"
             android:text="知识点六" />
 
+        <TextView
+            android:id="@+id/tv7"
+            style="@style/style_tv"
+            android:layout_x="1564px"
+            android:layout_y="552px"
+            android:text="知识点七" />
 
+        <TextView
+            android:id="@+id/tv8"
+            style="@style/style_tv"
+            android:layout_x="40px"
+            android:layout_y="624px"
+            android:text="知识点八" />
 
         <TextView
             android:id="@+id/tv_left_top"
