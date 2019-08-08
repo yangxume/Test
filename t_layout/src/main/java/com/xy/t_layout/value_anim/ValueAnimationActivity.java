@@ -57,12 +57,12 @@ public class ValueAnimationActivity extends AppCompatActivity
 //
 //        testLottieAnim();
 //
-        goSWCenter(tv1,tv2,-962,-615,0);
-        goSWCenter(tv2,tv3,949,582,2*delay);
-        goSWCenter(tv3,tv4,956,-601,3*delay);
-        goSWCenter(tv4,tv5,-956,613,4*delay);
-        goSWCenter(tv5,tv6,-326,571,5*delay);
-        goSWCenter(tv6,tv6,-369,-634,6*delay);
+//        goSWCenter(tv1,tv2,-962,-615,0);
+//        goSWCenter(tv2,tv3,949,582,2*delay);
+//        goSWCenter(tv3,tv4,956,-601,3*delay);
+//        goSWCenter(tv4,tv5,-956,613,4*delay);
+//        goSWCenter(tv5,tv6,-326,571,5*delay);
+//        goSWCenter(tv6,tv6,-369,-634,6*delay);
 
     }
 

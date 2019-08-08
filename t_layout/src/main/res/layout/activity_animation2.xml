@@ -32,14 +32,14 @@
         <TextView
             android:id="@+id/tv4"
             style="@style/style_tv"
-            android:layout_x="1238px"
+            android:layout_x="1364px"
             android:layout_y="144px"
             android:text="知识点四" />
 
         <TextView
             android:id="@+id/tv5"
             style="@style/style_tv"
-            android:layout_x="892px"
+            android:layout_x="692px"
             android:layout_y="156px"
             android:text="知识点五" />
 
