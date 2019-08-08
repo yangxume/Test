@@ -6,6 +6,7 @@
     android:background="@mipmap/personal_main_background"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:visibility="gone"
         android:id="@+id/ll_btn"

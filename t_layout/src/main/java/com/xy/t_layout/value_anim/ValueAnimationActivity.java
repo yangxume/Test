@@ -5,10 +5,12 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -44,23 +46,23 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     private LottieAnimationView lottie_anim_view;
 
-    int delay = 500;
+    private int delay = 1000;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animation);
+        setContentView(R.layout.activity_animation2);
 
         initView();
-
-        testLottieAnim();
-
-        goSWCenter(tv1,tv2,945,452,2*delay);
-        goSWCenter(tv2,tv3,-945,452,4*delay);
-        goSWCenter(tv3,tv4,945,0,6*delay);
-        goSWCenter(tv4,tv5,-945,0,8*delay);
-        goSWCenter(tv5,tv6,945,-452,10*delay);
-        goSWCenter(tv6,tv6,-945,-452,12*delay);
+//
+//        testLottieAnim();
+//
+        goSWCenter(tv1,tv2,-962,-615,0);
+        goSWCenter(tv2,tv3,949,582,2*delay);
+        goSWCenter(tv3,tv4,956,-601,3*delay);
+        goSWCenter(tv4,tv5,-956,613,4*delay);
+        goSWCenter(tv5,tv6,-326,571,5*delay);
+        goSWCenter(tv6,tv6,-369,-634,6*delay);
 
     }
 
@@ -73,19 +75,22 @@ public class ValueAnimationActivity extends AppCompatActivity
         tv5 = findViewById(R.id.tv5);
         tv6 = findViewById(R.id.tv6);
 
+//        WidgetController.setLayoutX(tv1,1364);
+//        WidgetController.setLayoutY(tv1,1324);
+
 //        myanimview = findViewById(R.id.myanimview);
 
-        btn_alpha = findViewById(R.id.btn_alpha);
-        btn_rotation = findViewById(R.id.btn_rotation);
-        btn_scale = findViewById(R.id.btn_scale);
-        btn_translation = findViewById(R.id.btn_translation);
-        btn_anim_set = findViewById(R.id.btn_anim_set);
-
-        btn_alpha.setOnClickListener(this);
-        btn_rotation.setOnClickListener(this);
-        btn_scale.setOnClickListener(this);
-        btn_translation.setOnClickListener(this);
-        btn_anim_set.setOnClickListener(this);
+//        btn_alpha = findViewById(R.id.btn_alpha);
+//        btn_rotation = findViewById(R.id.btn_rotation);
+//        btn_scale = findViewById(R.id.btn_scale);
+//        btn_translation = findViewById(R.id.btn_translation);
+//        btn_anim_set = findViewById(R.id.btn_anim_set);
+//
+//        btn_alpha.setOnClickListener(this);
+//        btn_rotation.setOnClickListener(this);
+//        btn_scale.setOnClickListener(this);
+//        btn_translation.setOnClickListener(this);
+//        btn_anim_set.setOnClickListener(this);
     }
 
     @Override
@@ -112,7 +117,6 @@ public class ValueAnimationActivity extends AppCompatActivity
                 break;
 
             case R.id.btn_translation:
-
 
                 goSWCenter(tv1,tv2,945,452,2*delay);
                 goSWCenter(tv2,tv3,-945,452,4*delay);
@@ -194,7 +198,8 @@ public class ValueAnimationActivity extends AppCompatActivity
 
     public static void goSWCenter(View view, final View nextView, int endx, int endY, long delay) {
 
-        AnimatorUtil animatorUtils = new AnimatorUtil(view, 1500);
+
+        AnimatorUtil animatorUtils = new AnimatorUtil(view, 1000);
         animatorUtils.getAnimate().setStartDelay(delay);
         animatorUtils.addAlphaAnimationBy(-1.0f)
                 .addTranslationAnimationBy(endx, endY)
