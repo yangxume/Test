@@ -1,4 +1,4 @@
-include ':app', ':test_spinner', ':t_lottie_anim',
+include ':app', ':test_spinner', ':t_lottie_anim', ':t_animation',
         ':t_layout', ':t_popupwindow',
         ':timepickerdialog',
         ':t_swipeview',
