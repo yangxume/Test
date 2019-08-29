@@ -14,10 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        iv = findViewById(R.id.iv);
 
-        iv.setImageResource(R.drawable.pc_knowledge_anim);
-        AnimationDrawable animationDrawable = (AnimationDrawable) iv.getDrawable();
-        animationDrawable.start();
     }
 }
