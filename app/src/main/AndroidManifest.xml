@@ -9,8 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--<activity android:name=".activity.ProcessIsBackgroundActivity">-->
-        <activity android:name=".activity.TestDrawCircleActivity">
+<!--        <activity android:name=".activity.TestDrawCircleActivity">-->
         <!--<activity android:name=".activity.MainActivity">-->
+        <activity android:name=".ActivityHandler">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
