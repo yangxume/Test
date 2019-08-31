@@ -1,25 +1,23 @@
-package com.xy.robolectric.net;
+package com.xy.robolectric.net.concrete;
 
-import java.io.IOException;
+import com.xy.robolectric.net.LoggingInterceptor;
 
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class GithubService {
+public class ConcreteService {
 
     private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GithubApi.BASE_URL)
+            .baseUrl(ConcreteApi.BASE_URL)
             .client(getOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build();
 
-    public static GithubApi createApiServie(){
-        return retrofit.create(GithubApi.class);
+    public static ConcreteApi createApiServie(){
+        return retrofit.create(ConcreteApi.class);
     }
 
     private static OkHttpClient getOkHttpClient() {

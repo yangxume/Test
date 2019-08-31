@@ -1,4 +1,4 @@
-package com.xy.robolectric.net;
+package com.xy.robolectric.net.github;
 
 import com.xy.robolectric.bean.User;
 

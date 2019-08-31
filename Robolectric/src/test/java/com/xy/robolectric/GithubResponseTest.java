@@ -1,7 +1,7 @@
 package com.xy.robolectric;
 
 import com.xy.robolectric.bean.User;
-import com.xy.robolectric.net.GithubService;
+import com.xy.robolectric.net.github.GithubService;
 
 import org.junit.Before;
 import org.junit.Test;
