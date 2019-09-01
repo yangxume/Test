@@ -11,7 +11,8 @@
         <!--<activity android:name=".activity.ProcessIsBackgroundActivity">-->
 <!--        <activity android:name=".activity.TestDrawCircleActivity">-->
         <!--<activity android:name=".activity.MainActivity">-->
-        <activity android:name=".ActivityHandler">
+<!--        <activity android:name=".ActivityHandler">-->
+        <activity android:name=".ActivityExpandListView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
