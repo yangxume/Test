@@ -1,8 +1,10 @@
 package com.xy.robolectric;
 
-import com.xy.robolectric.bean.User;
-import com.xy.robolectric.net.GithubService;
+import com.xy.robolectric.bean.Login;
+import com.xy.robolectric.net.concrete.ConcreteService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +20,8 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class,sdk = 24)
@@ -52,20 +56,32 @@ public class ConcreteResponseTest {
     }
 
     @Test
-    public void getUser(){
+    public void login(){
 
-        GithubService.createApiServie()
-                .getUser("simplezhli")
+
+        JSONObject params = new JSONObject();
+
+        try {
+            params.put("login", "17301025530");
+            params.put("pwd", "111111");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
+
+        ConcreteService.createApiServie()
+                .login(body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<User>() {
+                .subscribe(new Observer<Login>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(User user) {
+                    public void onNext(Login login) {
 
                     }
 
@@ -79,6 +95,9 @@ public class ConcreteResponseTest {
 
                     }
                 });
+
+
+
     }
 
 }
