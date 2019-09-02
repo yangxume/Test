@@ -2,6 +2,7 @@ package com.okay.test;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
@@ -33,6 +34,7 @@ public class ActivityHandler extends AppCompatActivity {
             @Override
             public void run() {
 
+                Looper.prepare();
                 handler2 = new Handler();
 
             }
