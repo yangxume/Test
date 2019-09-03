@@ -3,6 +3,7 @@ package com.okay.test;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
@@ -28,6 +29,33 @@ public class ActivityHandler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
 
+        create();
+
+        sendMsg();
+
+    }
+
+    private void sendMsg() {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Message msg = new Message();
+                msg.arg1 = 1;
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("data",1);
+                msg.setData(bundle);
+
+                handler1.sendMessage(msg);
+            }
+        }).start();
+
+
+    }
+
+    private void create() {
         handler1 = new Handler();
 
         new Thread(new Runnable() {
@@ -39,7 +67,5 @@ public class ActivityHandler extends AppCompatActivity {
 
             }
         }).start();
-
-
     }
 }
