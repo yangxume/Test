@@ -13,7 +13,8 @@
         <!--<activity android:name=".activity.MainActivity">-->
 <!--        <activity android:name=".ActivityHandler">-->
 <!--        <activity android:name=".ActivityHomeKey">-->
-        <activity android:name=".ActivityExpandListView">
+<!--        <activity android:name=".ActivityExpandListView">-->
+        <activity android:name=".keyboard.ActivityKeyboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

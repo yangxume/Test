@@ -10,14 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 <!--        <activity android:name=".value_anim.ValueAnimationActivity">-->
-        <activity android:name=".activity.ActivityUIOptimize">
+<!--        <activity android:name=".activity.ActivityUIOptimize">-->
+        <activity android:name=".activity.ActivityConstraintLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ActivityCoordinatorLayout"/>
+<!--        <activity android:name=".activity.ActivityCoordinatorLayout"/>-->
 
         <activity android:name=".flowlayout.ActivityFlowLayout"/>
 

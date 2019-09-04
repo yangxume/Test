@@ -46,4 +46,5 @@ dependencies {
     implementation files('libs/randomlayout.jar')
 
     implementation 'com.airbnb.android:lottie:1.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
