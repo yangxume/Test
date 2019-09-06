@@ -16,10 +16,13 @@ import retrofit2.http.POST;
 public interface ApiService {
 
 //    https://www.wanandroid.com/user/login
+//    https://www.wanandroid.com/user/register
+//    方法：POST
+//    username,password,repassword
 
     @POST("user/login")
     Observable<JsonObject> login(@Body JsonObject jsonObject);
 
-    @POST("user/login")
-    Call<JsonObject> login2();
+    @POST("user/register")
+    Call<JsonObject> register(@Body JsonObject jsonObject);
 }

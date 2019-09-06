@@ -19,6 +19,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class,sdk = 24)
@@ -84,6 +85,19 @@ public class RetrofitOkHttpTest {
 
                     }
                 });
+
     }
 
+    @Test
+    public void register(){
+
+        JsonObject params = new JsonObject();
+        params.addProperty("username","test1");
+        params.addProperty("password","test1");
+        params.addProperty("repassword","test1");
+
+        Call<JsonObject> register = RetrofitClient.getInstance().create(ApiService.class)
+                .register(params);
+
+    }
 }
