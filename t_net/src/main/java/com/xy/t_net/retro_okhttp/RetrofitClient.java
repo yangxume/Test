@@ -19,7 +19,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private Retrofit mRetrofit;
-    private String baseUrl = "https://www.wanandroid.com";
+//    private String BASE_URL = "https://www.wanandroid.com";
+    public  String BASE_URL = "http://39.97.253.40";
 
     private static class SingletonHolder {
         private static RetrofitClient INSTANCE = new RetrofitClient();
@@ -40,7 +41,7 @@ public class RetrofitClient {
 
         mRetrofit = new Retrofit
                 .Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(getDefaultOkHttpClient(null))
@@ -54,7 +55,7 @@ public class RetrofitClient {
 
         mRetrofit = new Retrofit
                 .Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(getDefaultOkHttpClient(dns))

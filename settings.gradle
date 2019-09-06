@@ -1,4 +1,6 @@
-include ':app', ':t_fragment', ':t_net',
+include ':app',
+        ':t_fragment',
+        ':t_net',
         ':t_lottie_anim',
         ':t_animation',
         ':t_anko',

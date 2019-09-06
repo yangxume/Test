@@ -6,7 +6,7 @@ public class LogUtils {
 
 	/** 日志输出时的TAG */
 
-	public static String mTag = "okay_gesture";
+	public static String mTag = "tag_concrete";
 
 	protected static boolean IS_LOG = true;
 

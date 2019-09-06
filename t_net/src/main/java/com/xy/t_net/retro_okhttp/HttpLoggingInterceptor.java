@@ -139,7 +139,14 @@ public class HttpLoggingInterceptor implements Interceptor {
 
         Connection connection = chain.connection();
         Protocol protocol = connection != null ? connection.protocol() : Protocol.HTTP_1_1;
+
+
+        Headers headers = request.headers();
+        String str_header = headers.toString();
+        LogUtils.d("request headers :"+str_header);
+
         String requestStartMessage = "上行--> " +"requestid="+request.header("requestid") + ' ' + request.method() + ' ' + request.url() + ' ' + protocol;
+
         if (!logHeaders && hasRequestBody) {
             requestStartMessage += " (" + requestBody.contentLength() + "-byte body)";
         }

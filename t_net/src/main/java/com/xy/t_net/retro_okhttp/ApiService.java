@@ -23,6 +23,9 @@ public interface ApiService {
     @POST("user/login")
     Observable<JsonObject> login(@Body JsonObject jsonObject);
 
+//    @POST("user/register")
+//    Call<JsonObject> register(@Body JsonObject jsonObject);
+
     @POST("user/register")
-    Call<JsonObject> register(@Body JsonObject jsonObject);
+    Observable<JsonObject> register(@Body JsonObject jsonObject);
 }

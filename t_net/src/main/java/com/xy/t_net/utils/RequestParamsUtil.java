@@ -9,11 +9,17 @@ import java.util.UUID;
  */
 public class RequestParamsUtil {
 
+
     public RequestParamsUtil() {
     }
 
     public static String newRequestId() {
         return String.format("03%010d", Math.abs(UUID.randomUUID().hashCode()));
+    }
+
+
+    public static String getToken() {
+        return "37b7339c44bf404dbfb2cd2fa0012081";
     }
 
 }

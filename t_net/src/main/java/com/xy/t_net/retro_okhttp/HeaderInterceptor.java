@@ -29,9 +29,10 @@ public class HeaderInterceptor implements Interceptor {
                 .header("Api-Gzip", "0")
                 //requestid为统一uuid hash正值变为数字后，拿0补齐为10位，再加两位服务名
                 .header("requestid", RequestParamsUtil.newRequestId())
-                .header("appversion", Device.getVersionName())
+                .header("X-AUTH-TOKEN", RequestParamsUtil.getToken())
+//                .header("appversion", Device.getVersionName())
                 //Request-From 自定义header来区分请求来源
-                .header("Request-From", "t_classroom")
+//                .header("Request-From", "t_classroom")
                 .method(originalRequest.method(), originalRequest.body())
                 .url(originalRequest.url());
 
