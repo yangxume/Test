@@ -1,4 +1,4 @@
-package com.xy.t_fragment;
+package com.xy.t_fragment.basic_use;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,16 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.xy.t_fragment.R;
+
 /**
  * @Author: yangxume@gmail.com
- * @Time: 2019-09-05 17:54
+ * @Time: 2019-09-10 15:50
  * @Desc:
  */
-public class HeaderFragment extends Fragment {
+public class ArticleListFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_header,container,false);
+
+        return inflater.inflate(R.layout.fragment_articlelist,container,false);
     }
 }
