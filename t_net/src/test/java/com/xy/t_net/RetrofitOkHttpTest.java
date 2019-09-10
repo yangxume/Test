@@ -1,7 +1,7 @@
 package com.xy.t_net;
 
 import com.google.gson.JsonObject;
-import com.xy.t_net.retro_okhttp.ApiService;
+import com.xy.t_net.retro_okhttp.ApiServiceWanAndroid;
 import com.xy.t_net.retro_okhttp.RetrofitClient;
 
 import org.junit.Before;
@@ -11,7 +11,8 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
-import io.reactivex.Observable;
+import java.io.IOException;
+
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.plugins.RxAndroidPlugins;
@@ -21,6 +22,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
+import retrofit2.Response;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class,sdk = 24)
@@ -55,13 +57,30 @@ public class RetrofitOkHttpTest {
     }
 
     @Test
+    public void chapters(){
+
+        Call<JsonObject> call = RetrofitClient.getInstance().create(ApiServiceWanAndroid.class)
+                .chapters();
+        try {
+            Response<JsonObject> execute = call.execute();
+            JsonObject body = execute.body();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Test
     public void login(){
 
         JsonObject params = new JsonObject();
         params.addProperty("username","xuyang");
         params.addProperty("password","Xu_Yang011502");
 
-        RetrofitClient.getInstance().create(ApiService.class)
+        RetrofitClient.getInstance().create(ApiServiceWanAndroid.class)
                 .login(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -97,7 +116,7 @@ public class RetrofitOkHttpTest {
         params.addProperty("password","test1");
         params.addProperty("repassword","test1");
 
-        RetrofitClient.getInstance().create(ApiService.class)
+        RetrofitClient.getInstance().create(ApiServiceWanAndroid.class)
                 .register(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

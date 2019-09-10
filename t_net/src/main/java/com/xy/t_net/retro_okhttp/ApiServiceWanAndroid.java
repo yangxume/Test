@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -13,7 +14,16 @@ import retrofit2.http.POST;
  * @Time: 2019-09-06 16:23
  * @Desc:
  */
-public interface ApiService {
+public interface ApiServiceWanAndroid {
+
+
+
+//    获取公众号列表
+//    https://wanandroid.com/wxarticle/chapters/json
+//    方法： GET
+
+    @GET("wxarticle/chapters/json ")
+    Call<JsonObject> chapters();
 
 //    https://www.wanandroid.com/user/login
 //    https://www.wanandroid.com/user/register
