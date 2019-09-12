@@ -20,7 +20,12 @@
 
         <activity
             android:label="PropertyAnim"
-            android:name=".ActivityPropertyAnim"/>
+            android:name=".PropertyAnimActivity"/>
+
+        <activity
+            android:label="LottieAnim"
+            android:name=".LottieAnimActivity"/>
+
     </application>
 
 </manifest>

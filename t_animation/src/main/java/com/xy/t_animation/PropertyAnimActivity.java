@@ -20,7 +20,7 @@ import butterknife.OnClick;
  *
  * @ProjectName: Test
  * @Package: com.xy.t_animation
- * @ClassName: ActivityPropertyAnim
+ * @ClassName: PropertyAnimActivity
  * @Description: java类作用描述
  * @Author: 作者名
  * @CreateDate: 2019-08-29 14:53
@@ -29,9 +29,9 @@ import butterknife.OnClick;
  * @UpdateRemark: 更新说明：
  * @Version: 1.0
  */
-public class ActivityPropertyAnim extends AppCompatActivity {
+public class PropertyAnimActivity extends AppCompatActivity {
 
-    private static final String TAG = ActivityPropertyAnim.class.getSimpleName();
+    private static final String TAG = PropertyAnimActivity.class.getSimpleName();
     @BindView(R.id.btn_value_anim)
     Button btnValueAnim;
     @BindView(R.id.btn_object_anim)

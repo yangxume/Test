@@ -10,30 +10,44 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
+/**
+ * 1 Property Animation
+ *
+ *
+ * 2 Lottie 动画
+ *   Lottie 是一个用于 Android 和 iOS 的代码库，
+ *   可以解析用 Adobe After Effects 制作动画后通过 Bodymovin 插件 导出的JSON数据文件并在移动端原生渲染!
+ *   https://github.com/bigxixi/lottie-android
+ *   https://github.com/airbnb/lottie-android
+ *
+ *
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
 
 
     @BindView(R.id.btn_property_anim)
     Button btnPropertyAnim;
-    @BindView(R.id.btn_test)
-    Button btnTest;
+    @BindView(R.id.btn_lottie_anim)
+    Button btnLottieAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
     }
 
-    @OnClick({R.id.btn_property_anim, R.id.btn_test})
+    @OnClick({R.id.btn_property_anim, R.id.btn_lottie_anim})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_property_anim:
-                startActivity(new Intent(this,ActivityPropertyAnim.class));
+                startActivity(new Intent(this, PropertyAnimActivity.class));
                 break;
-            case R.id.btn_test:
+            case R.id.btn_lottie_anim:
+                startActivity(new Intent(this, LottieAnimActivity.class));
                 break;
         }
     }

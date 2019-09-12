@@ -19,7 +19,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private Retrofit mRetrofit;
-    private String BASE_URL = "https://www.wanandroid.com";
+    public String BASE_URL = " https://teacherpad-hotfix.xk12.cn/";
+//    private String BASE_URL = "https://www.wanandroid.com";
 //    public  String BASE_URL = "http://39.97.253.40";
 
     private static class SingletonHolder {
@@ -30,7 +31,7 @@ public class RetrofitClient {
         return SingletonHolder.INSTANCE;
     }
 
-    public static RetrofitClient getInstance(Dns dns){
+    public static RetrofitClient getInstance(Dns dns) {
         return new RetrofitClient(dns);
     }
 
@@ -63,7 +64,7 @@ public class RetrofitClient {
     }
 
     @NonNull
-    public OkHttpClient getDefaultOkHttpClient(Dns dns){
+    public OkHttpClient getDefaultOkHttpClient(Dns dns) {
         OkHttpClient.Builder builder = new OkHttpClient().newBuilder()
                 .addInterceptor(new HeaderInterceptor())
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
@@ -81,14 +82,14 @@ public class RetrofitClient {
 //                .hostnameVerifier(SSLSocketFactory.getHostnameVerifier())
 //                .sslSocketFactory(SSLSocketFactory.getSSLContext().getSocketFactory());
 
-        if(dns == null){
+        if (dns == null) {
             return builder.build();
         }
 
         return builder.dns(dns).build();
     }
 
-    public  <T> T create(final Class<T> service) {
+    public <T> T create(final Class<T> service) {
         if (service == null) {
             throw new RuntimeException("Api service is null!");
         }
