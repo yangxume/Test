@@ -40,8 +40,12 @@ public class VpFragmentActivity extends AppCompatActivity {
         fragmentList.add(new Fragment2());
         fragmentList.add(new Fragment3());
 
-//        vp.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-        vp.setAdapter(new MyPageStateAdapter(getSupportFragmentManager()));
+        FragmentManager fm = getSupportFragmentManager();
+
+//        vp.setAdapter(new MyPagerAdapter(fm));
+//        vp.setAdapter(new MyPageStateAdapter(fm));
+
+        vp.setAdapter(new MyFragmentAdapter(fm));
 
     }
 
@@ -66,6 +70,23 @@ public class VpFragmentActivity extends AppCompatActivity {
     class MyPageStateAdapter extends FragmentStatePagerAdapter{
 
         public MyPageStateAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            return fragmentList.get(i);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentList == null ? 0 : fragmentList.size();
+        }
+    }
+
+    class MyFragmentAdapter extends FragmentStatePagerAdapter{
+
+        public MyFragmentAdapter(FragmentManager fm) {
             super(fm);
         }
 

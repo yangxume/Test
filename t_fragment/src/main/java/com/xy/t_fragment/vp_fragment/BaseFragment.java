@@ -1,4 +1,4 @@
-package com.xy.t_fragment;
+package com.xy.t_fragment.vp_fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,10 +13,13 @@ import android.view.ViewGroup;
  * @Author: yangxume@gmail.com
  * @Time: 2019-09-10 15:32
  * @Desc:
+ *
+ * https://blog.csdn.net/qq_27870227/article/details/97031308
+ *
  */
-public abstract class BaseLazyLoadFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
-    private static final String TAG = BaseLazyLoadFragment.class.getSimpleName();
+    protected  final String TAG = this.getClass().getSimpleName();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
