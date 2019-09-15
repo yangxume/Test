@@ -138,6 +138,68 @@ public class ConcreteTest {
 
     }
 
+    @Test
+    public void noticeList() {
+
+        RetrofitClient.getInstance().create(ApiServiceConcrete.class)
+                .noticelist()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<JsonObject>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(JsonObject user) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
+    @Test
+    public void noticeReadReport() {
+
+        RetrofitClient.getInstance().create(ApiServiceConcrete.class)
+                .noticeReadReport()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<JsonObject>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(JsonObject user) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
     @Test //ok 缺少项目集次编码
     public void siteList() {
 
@@ -707,7 +769,6 @@ public class ConcreteTest {
         JSONObject params = new JSONObject();
 
         try {
-            params.put("gradationDepartment", "2");
             params.put("content", "软件很不错");
             params.put("anonymous", "1");
         } catch (JSONException e) {
@@ -717,7 +778,7 @@ public class ConcreteTest {
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
 
         RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .feedBack(body)
+                .feedBack("1",body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<JsonObject>() {
@@ -935,13 +996,13 @@ public class ConcreteTest {
 
     }
 
-    @Test
-    public void statisticsLeader() {
+    @Test //ok
+    public void statisticsHomeLeader() {
 
         JSONObject params = new JSONObject();
 
         try {
-            params.put("gradationDepartment", "");
+            params.put("gradationDepartment", "1");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -949,7 +1010,7 @@ public class ConcreteTest {
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
 
         RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .statisticsLeader(body)
+                .statisticsHomeLeader(body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<JsonObject>() {
@@ -973,11 +1034,20 @@ public class ConcreteTest {
 
                     }
                 });
+        //D/t_net: 上行--> requestid=031812544201 POST http://39.97.253.40/cp/api/statistics/homePageLeader http/1.1
+        //D/t_net:
+        //D/t_net: {"gradationDepartment":"1"}
+        //D/t_net: --> END POST (27-byte body)
+        //D/t_net: 下行<-- requestid=031812544201, 200  http://39.97.253.40/cp/api/statistics/homePageLeader (104ms)
+        //D/t_net:
+        //D/t_net: 下行<-- requestid=031812544201, {"code":0,"body":{"proectList":[{"bidSectionList":[{"bidSectionName":"1标段","siteRanking":4,"siteName":"#33站"},{"bidSectionName":"1标段","siteRanking":3,"siteName":"#33站"}],"projectName":"保津高速公路"}]},"message":"success"}
 
     }
 
-    @Test
-    public void statisticsHome() {
+
+
+    @Test //?
+    public void statisticsHomeOthers() {
 
         JSONObject params = new JSONObject();
 
@@ -1078,7 +1148,7 @@ public class ConcreteTest {
         RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
 
         RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .statisticsProduction(body)
+                .statisticsFangliang(body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<JsonObject>() {
