@@ -99,25 +99,19 @@ public interface ApiServiceConcrete {
     /**************************   我的    **************************/
 
 
-    @POST("me/myinfo")
+    @POST("/cp/api/my/information")
     Observable<JsonObject>  getMyInfo();
 
-    @POST("me/changepassword")
+    @POST("/cp/api/my/changePassword")
     Observable<JsonObject>  changePassword(@Body RequestBody body);
 
-    @POST("me/softwarefunction")
-    Observable<JsonObject>  getSoftwareFunction();
-
-    @POST("me/companyintro")
-    Observable<JsonObject>  getCompanyIntro();
-
-    @POST("me/feedback")
+    @POST("/cp/api/my/proposal/1")
     Observable<JsonObject>  feedBack(@Body RequestBody body);
 
-    @POST("me/issuereportinit")
+    @POST("/cp/api/my/initialization/1")
     Observable<JsonObject>  issueReportInit(@Body RequestBody body);
 
-    @POST("me/issuereport")
+    @POST("/cp/api/my/initialization/gradationDepartment")
     Observable<JsonObject>  issueReport(@Body RequestBody body);
 
     @POST("me/issuelist")

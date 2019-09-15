@@ -23,6 +23,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
+import retrofit2.http.POST;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 24)
@@ -56,7 +57,7 @@ public class ConcreteTest {
 
     }
 
-    @Test
+    @Test //ok
     public void login() {
 
         JSONObject params = new JSONObject();
@@ -95,8 +96,14 @@ public class ConcreteTest {
 
                     }
                 });
+        //D/t_net: 上行--> requestid=031858719793 POST http://39.97.253.40/rbac/api/user/login http/1.1
+        //D/t_net:
+        //D/t_net: {"login":"17301025530","pwd":"111111"}
+        //D/t_net: --> END POST (38-byte body)
+        //D/t_net: 下行<-- requestid=031858719793, 200  http://39.97.253.40/rbac/api/user/login (127ms)
+        //D/t_net:
+        //D/t_net: 下行<-- requestid=031858719793, {"code":0,"body":{"moduleResource":[],"roleIds":[1],"identityIds":[6],"apiResource":[],"departmentIds":[],"user":{"notes":"","phone":"17301025530","nickName":"李四","loginName":"17301025530","name":"李四","userPosition":"","id":1,"gmtCreate":"2019-01-12 14:55:49","headPic":"","jobNumber":"","email":""},"token":"customerae6317dadbe34f6b8071cfe153417eca"},"message":"success"}
 
-//        {"code":0,"body":{"moduleResource":[],"roleIds":[1],"identityIds":[6],"apiResource":[],"departmentIds":[],"user":{"notes":"","phone":"17301025530","nickName":"李四","loginName":"17301025530","name":"李四","userPosition":"","id":1,"gmtCreate":"2019-01-12 14:55:49","headPic":"","jobNumber":"","email":""},"token":"customer37b7339c44bf404dbfb2cd2fa0012081"},"message":"success"}
 
     }
 
@@ -131,7 +138,7 @@ public class ConcreteTest {
 
     }
 
-    @Test
+    @Test //ok 缺少项目集次编码
     public void siteList() {
 
         RetrofitClient.getInstance().create(ApiServiceConcrete.class)
@@ -159,6 +166,14 @@ public class ConcreteTest {
 
                     }
                 });
+
+        //D/t_net: 上行--> requestid=032014690902 POST http://39.97.253.40/rbac/api/depart/siteList http/1.1
+        //D/t_net:
+        //D/t_net:
+        //D/t_net: --> END POST (0-byte body)
+        //D/t_net: 下行<-- requestid=032014690902, 200  http://39.97.253.40/rbac/api/depart/siteList (103ms)
+        //D/t_net:
+        //D/t_net: 下行<-- requestid=032014690902, {"code":0,"body":[{"id":"null","text":"保津高速公路","checked":null,"children":[],"isParent":false,"chkDisabled":null,"open":true,"iconSkin":null,"attr":{"depType":1}},{"id":"null","text":"阿斯顿高速公路","checked":null,"children":[],"isParent":false,"chkDisabled":null,"open":true,"iconSkin":null,"attr":{"depType":1}},{"id":"null","text":"工程1","checked":null,"children":[],"isParent":false,"chkDisabled":null,"open":true,"iconSkin":null,"attr":{"depType":1}},{"id":"null","text":"工程2","checked":null,"children":[],"isParent":false,"chkDisabled":null,"open":true,"iconSkin":null,"attr":{"depType":1}},{"id":"null","text":"工程3","checked":null,"children":[],"isParent":false,"chkDisabled":null,"open":true,"iconSkin":null,"attr":{"depType":1}},{"id":"null","text":"测试12","checked":null,"children":[],"isParent":false,"chkDisabled":null,"open":true,"iconSkin":null,"attr":{"depType":1}}],"message":"success"}
 
     }
 
@@ -597,7 +612,7 @@ public class ConcreteTest {
 
     }
 
-    @Test
+    @Test //ok
     public void getMyInfo() {
 
        RetrofitClient.getInstance().create(ApiServiceConcrete.class)
@@ -625,18 +640,26 @@ public class ConcreteTest {
 
                     }
                 });
+       //D/t_net: 上行--> requestid=030142441132 POST http://39.97.253.40/cp/api/my/information http/1.1
+        //D/t_net:
+        //D/t_net:
+        //D/t_net: --> END POST (0-byte body)
+        //D/t_net: 下行<-- requestid=030142441132, 200  http://39.97.253.40/cp/api/my/information (136ms)
+        //D/t_net:
+        //D/t_net: 下行<-- requestid=030142441132, {"code":0,"body":{"phone":"17301025530","name":"李四","company":"保津高速公路","position":null},"message":"success"}
+        //D/t_net: <-- END HTTP (124-byte body)
 
     }
 
-    @Test
+    @Test //ok
     public void changePassword() {
 
         JSONObject params = new JSONObject();
 
         try {
-            params.put("oldPwd", "");
-            params.put("newPwd1", "");
-            params.put("newPwd2", "");
+            params.put("oldPwd", "111111");
+            params.put("newPwd1", "111111");
+            params.put("newPwd2", "111111");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -668,79 +691,25 @@ public class ConcreteTest {
 
                     }
                 });
+        //D/t_net: 上行--> requestid=031078442643 POST http://39.97.253.40/cp/api/my/changePassword http/1.1
+        //D/t_net:
+        //D/t_net: {"oldPwd":"111111","newPwd1":"111111","newPwd2":"111111"}
+        //D/t_net: --> END POST (57-byte body)
+        //D/t_net: 下行<-- requestid=031078442643, 200  http://39.97.253.40/cp/api/my/changePassword (149ms)
+        //D/t_net:
+        //D/t_net: 下行<-- requestid=031078442643, {"code":0,"body":null,"message":"success"}
 
     }
 
-    @Test
-    public void getSoftwareFunction() {
-
-        RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .getSoftwareFunction()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<JsonObject>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(JsonObject user) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-
-    }
-
-    @Test
-    public void getCompanyIntro() {
-
-        RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .getCompanyIntro()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<JsonObject>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(JsonObject user) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-
-    }
-
-    @Test
+    @Test //? 此处url后需要拼接id
     public void feedBack() {
 
         JSONObject params = new JSONObject();
 
         try {
-            params.put("anonymous", "");
-            params.put("content", "");
+            params.put("gradationDepartment", "2");
+            params.put("content", "软件很不错");
+            params.put("anonymous", "1");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -773,15 +742,23 @@ public class ConcreteTest {
                     }
                 });
 
+//        D/t_net: 上行--> requestid=030823742637 POST http://39.97.253.40/cp/api/my/proposal/1 http/1.1
+//        D/t_net:
+//        D/t_net: {"gradationDepartment":"2","content":"软件很不错","anonymous":"1"}
+//        D/t_net: --> END POST (71-byte body)
+//        D/t_net: 下行<-- requestid=030823742637, 200  http://39.97.253.40/cp/api/my/proposal/1 (125ms)
+//        D/t_net:
+//        D/t_net: 下行<-- requestid=030823742637, {"code":0,"body":null,"message":"success"}
+
     }
 
-    @Test
+    @Test //?
     public void issueReportInit() {
 
         JSONObject params = new JSONObject();
 
         try {
-            params.put("gradationDepartment", "");
+            params.put("gradationDepartment", "1");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -816,17 +793,20 @@ public class ConcreteTest {
 
     }
 
-    @Test
+    @Test //?
     public void issueReport() {
 
         JSONObject params = new JSONObject();
 
         try {
-            params.put("gradationDepartment", "");
-            params.put("contentOfTheReport", "");
-            params.put("fileList", "");
-            params.put("enclosure", "");
-            params.put("anonymous", "");
+            params.put("gradationDepartment", "1");
+            params.put("bidSectionId", "1");
+            params.put("bidSectionName", "1");
+            params.put("contentOfTheReport", "1");
+            params.put("fileList", "1");
+            params.put("fileList", "1");
+            params.put("anonymous", "1");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -858,10 +838,22 @@ public class ConcreteTest {
 
                     }
                 });
+        //D/tag_concrete: request headers :Api-Gzip: 0
+        //requestid: 031792425405
+        //X-AUTH-TOKEN: customerf8cbdee936544c60ba4f044381c26057
+        //
+        //D/t_net: 上行--> requestid=031792425405 POST http://39.97.253.40/cp/api/my/initialization/gradationDepartment http/1.1
+        //D/t_net:
+        //D/t_net: {"gradationDepartment":"1","bidSectionId":"1","bidSectionName":"1","contentOfTheReport":"1","fileList":"1","anonymous":"1"}
+        //D/t_net: --> END POST (123-byte body)
+        //D/t_net: 下行<-- requestid=031792425405, 200  http://39.97.253.40/cp/api/my/initialization/gradationDepartment (250ms)
+        //D/t_net:
+        //D/t_net: 下行<-- requestid=031792425405, {"body":null,"message":"系统正忙,请稍后在试......","code":-9999}
+        //D/t_net: <-- END HTTP (73-byte body)
 
     }
 
-    @Test
+    @Test //? 缺失接口
     public void getIssueList() {
 
         JSONObject params = new JSONObject();
