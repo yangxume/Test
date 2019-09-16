@@ -8,6 +8,7 @@ import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiServiceConcrete {
 
@@ -31,6 +32,18 @@ public interface ApiServiceConcrete {
      */
     @POST("rbac/api/depart/siteList")
     Observable<JsonObject> siteList();
+
+    /**
+     * 通知-公告通知列表/公告通知详情
+     */
+    @POST("/cp/api/notice/list/1")
+    Observable<JsonObject> noticelist();
+
+    /**
+     * 通知-公告通知已读
+     */
+    @POST("/api/notice/readed/{gradationDepartment}")
+    Observable<JsonObject> noticeReadReport();
 
     /**************************  预警    **************************/
 
@@ -99,25 +112,19 @@ public interface ApiServiceConcrete {
     /**************************   我的    **************************/
 
 
-    @POST("me/myinfo")
+    @POST("/cp/api/my/information")
     Observable<JsonObject>  getMyInfo();
 
-    @POST("me/changepassword")
+    @POST("/cp/api/my/changePassword")
     Observable<JsonObject>  changePassword(@Body RequestBody body);
 
-    @POST("me/softwarefunction")
-    Observable<JsonObject>  getSoftwareFunction();
+    @POST("/cp/api/my/proposal/{gradationDepartment}")
+    Observable<JsonObject>  feedBack(@Path("gradationDepartment") String gradationDepartment, @Body RequestBody body);
 
-    @POST("me/companyintro")
-    Observable<JsonObject>  getCompanyIntro();
-
-    @POST("me/feedback")
-    Observable<JsonObject>  feedBack(@Body RequestBody body);
-
-    @POST("me/issuereportinit")
+    @POST("/cp/api/my/initialization/1")
     Observable<JsonObject>  issueReportInit(@Body RequestBody body);
 
-    @POST("me/issuereport")
+    @POST("/cp/api/my/initialization/gradationDepartment")
     Observable<JsonObject>  issueReport(@Body RequestBody body);
 
     @POST("me/issuelist")
@@ -129,24 +136,88 @@ public interface ApiServiceConcrete {
 
 
     /**************************   统计    **************************/
-    @POST("statistics/home")
-    Observable<JsonObject>  statisticsLeader(@Body RequestBody body);
+    /**
+     * 统计首页-领导
+     * @param body
+     * @return
+     */
+    @POST("/cp/api/statistics/homePageLeader")
+    Observable<JsonObject>  statisticsHomeLeader(@Body RequestBody body);
 
-    @POST("statistics/home")
+    /**
+     * 材料统计-领导
+     * @param body
+     * @return
+     */
+    @POST("/api/statistics/leader/materialStatistics/{gradationDepartment}/{rankingBasis}")
+    Observable<JsonObject>  statisticsMaterialsLeader(@Body RequestBody body);
+
+    /**
+     * 方量统计-领导
+     * @param body
+     * @return
+     */
+    @POST("/api/statistics/qualityAppraisal/{gradationDepartment}/{rankingBasis}")
+    Observable<JsonObject>  statisticsFangliangLeader(@Body RequestBody body);
+
+    /**
+     * 运输统计-领导
+     * @param body
+     * @return
+     */
+    @POST("statistics/transport")
+    Observable<JsonObject>  statisticsTransportLeader(@Body RequestBody body);
+
+    /**
+     * 处理统计-领导
+     * @param body
+     * @return
+     */
+    @POST("statistics/dispose")
+    Observable<JsonObject>  statisticsDisposeLeader(@Body RequestBody body);
+
+    /**
+     * 统计首页-站点人员
+     * @param body
+     * @return
+     */
+    @POST("/cp/api/statistics/homePageStaff/1")
     Observable<JsonObject>  statisticsHome(@Body RequestBody body);
 
-    @POST("statistics/quality")
+    /**
+     * 质量统计-站点人员
+     * @param body
+     * @return
+     */
+    @POST("/api/statistics/qualityAppraisal/{gradationDepartment}/{rankingBasis}")
     Observable<JsonObject>  statisticsQuality(@Body RequestBody body);
 
-    @POST("statistics/production")
-    Observable<JsonObject>  statisticsProduction(@Body RequestBody body);
-
+    /**
+     * 材料统计-站点人员
+     * @param body
+     * @return
+     */
     @POST("statistics/materials")
     Observable<JsonObject>  statisticsMaterials(@Body RequestBody body);
-
+    /**
+     * 方量统计-站点人员
+     * @param body
+     * @return
+     */
+    @POST("statistics/production")
+    Observable<JsonObject>  statisticsFangliang(@Body RequestBody body);
+    /**
+     * 运输统计-站点人员
+     * @param body
+     * @return
+     */
     @POST("statistics/transport")
     Observable<JsonObject>  statisticsTransport(@Body RequestBody body);
-
+    /**
+     * 处理统计-站点人员
+     * @param body
+     * @return
+     */
     @POST("statistics/dispose")
     Observable<JsonObject>  statisticsDispose(@Body RequestBody body);
     

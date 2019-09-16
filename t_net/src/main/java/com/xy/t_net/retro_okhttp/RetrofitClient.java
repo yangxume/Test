@@ -19,9 +19,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
     private Retrofit mRetrofit;
-    public String BASE_URL = " https://teacherpad-hotfix.xk12.cn/";
+//    public String BASE_URL = " https://teacherpad-hotfix.xk12.cn/";
 //    private String BASE_URL = "https://www.wanandroid.com";
-//    public  String BASE_URL = "http://39.97.253.40";
+    public  String BASE_URL = "http://39.97.253.40";
 
     private static class SingletonHolder {
         private static RetrofitClient INSTANCE = new RetrofitClient();
