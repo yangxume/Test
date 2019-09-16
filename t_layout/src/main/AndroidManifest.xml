@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 <!--        <activity android:name=".value_anim.ValueAnimationActivity">-->
 <!--        <activity android:name=".activity.ActivityUIOptimize">-->
-        <activity android:name=".activity.ActivityConstraintLayout">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

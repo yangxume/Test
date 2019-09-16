@@ -6,16 +6,12 @@ include ':app',
         ':t_anko',
         ':t_layout',
         ':t_popupwindow',
-        ':timepickerdialog',
         ':t_a_map',
         ':ArticlesProvider',
         ':brocast_receiver',
         ':Robolectric',
-        ':AndroidSurvey',
         ':recyclerview',
         ':doughnut',
         ':fitchart',
-        ':uitimatebar',
-        ':timeline',
-        ':JPushExample',
-        ':AnswerSystem1'
+        ':timeline'
+
