@@ -763,7 +763,7 @@ public class ConcreteTest {
 
     }
 
-    @Test //? 此处url后需要拼接id
+    @Test //ok 此处url后需要拼接id
     public void feedBack() {
 
         JSONObject params = new JSONObject();
@@ -816,18 +816,18 @@ public class ConcreteTest {
     @Test //?
     public void issueReportInit() {
 
-        JSONObject params = new JSONObject();
-
-        try {
-            params.put("gradationDepartment", "1");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
+//        JSONObject params = new JSONObject();
+//
+//        try {
+//            params.put("gradationDepartment", "1");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
 
         RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .issueReportInit(body)
+                .issueReportInit("1")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<JsonObject>() {

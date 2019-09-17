@@ -121,10 +121,10 @@ public interface ApiServiceConcrete {
     @POST("/cp/api/my/proposal/{gradationDepartment}")
     Observable<JsonObject>  feedBack(@Path("gradationDepartment") String gradationDepartment, @Body RequestBody body);
 
-    @POST("/cp/api/my/initialization/1")
-    Observable<JsonObject>  issueReportInit(@Body RequestBody body);
-
     @POST("/cp/api/my/initialization/gradationDepartment")
+    Observable<JsonObject>  issueReportInit(@Path("gradationDepartment") String gradationDepartment);
+
+    @POST("/cp/api/my/initialization/{gradationDepartment}")
     Observable<JsonObject>  issueReport(@Body RequestBody body);
 
     @POST("me/issuelist")
