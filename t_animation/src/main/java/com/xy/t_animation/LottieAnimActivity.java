@@ -31,6 +31,7 @@ public class LottieAnimActivity extends AppCompatActivity {
 
         animationview = findViewById(R.id.animationview);
         animationview.loop(true);
+        animationview.setImageResource(R.drawable.icon_zan_default);
 //        animationview.playAnimation();  //播放
 //		animationview.pauseAnimation(); //暂停
 //		animationview.cancelAnimation(); //取消
