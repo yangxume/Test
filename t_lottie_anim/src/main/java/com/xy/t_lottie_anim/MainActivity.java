@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void zan1(){
         lottieAnimationview.cancelAnimation();
+        lottieAnimationview.setRepeatMode(LottieDrawable.REVERSE);
         lottieAnimationview.setAnimation("zan1.json");
         lottieAnimationview.setImageAssetsFolder("images_zan1/");
         lottieAnimationview.playAnimation();
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void zan2(){
 
         lottieAnimationview.cancelAnimation();
+        lottieAnimationview.setRepeatMode(LottieDrawable.REVERSE);
         lottieAnimationview.setAnimation("zan2.json");
         lottieAnimationview.setImageAssetsFolder("images_zan2/");
         lottieAnimationview.playAnimation();
