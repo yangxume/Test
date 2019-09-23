@@ -25,6 +25,12 @@ import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.http.POST;
 
+//https://blog.csdn.net/qq_28190653/article/details/81035835
+
+//https://blog.csdn.net/u010316858/article/details/70312795
+
+//https://www.jianshu.com/p/3aa0e4efcfd3
+
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 24)
 public class ConcreteTest {
