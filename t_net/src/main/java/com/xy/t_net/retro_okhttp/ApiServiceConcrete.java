@@ -51,8 +51,8 @@ public interface ApiServiceConcrete {
     /**
      * 主页预警信息统计及通知
      */
-    @POST("")
-    Observable<JsonObject> warnLeaderList();
+    @POST("cp/api/warning/list/leader/{gradationDepartment}")
+    Observable<JsonObject> warnLeaderList(@Path("gradationDepartment") String gradationDepartment, @Body RequestBody body);
 
     /**
      * 预警列表-领导

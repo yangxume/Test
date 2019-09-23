@@ -19,7 +19,7 @@ public class RequestParamsUtil {
 
 
     public static String getToken() {
-        return "customerf8cbdee936544c60ba4f044381c26057";
+        return "customere9f362147beb4af78cc8c97c7197c861";
     }
 
 }

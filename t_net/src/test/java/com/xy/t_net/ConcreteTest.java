@@ -242,8 +242,21 @@ public class ConcreteTest {
     @Test
     public void warnLeaderList() {
 
+        JSONObject params = new JSONObject();
+
+        try {
+            params.put("earlyWarningType", "17301025530");
+            params.put("size", 20);
+            params.put("current", 1);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), params.toString());
+
         RetrofitClient.getInstance().create(ApiServiceConcrete.class)
-                .warnLeaderList()
+                .warnLeaderList("1",body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<JsonObject>() {
