@@ -1,4 +1,4 @@
-include ':app', ':t_webview',
+include ':app', ':t_webview', ':t_expandablelistview',
         ':t_fragment',
         ':t_net',
         ':t_lottie_anim',
