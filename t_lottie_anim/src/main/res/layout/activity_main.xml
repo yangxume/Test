@@ -7,23 +7,38 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_test1"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="测试1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_zan1"
+            style="@style/style_btn"
+            android:text="点赞1" />
+
+        <Button
+            android:id="@+id/btn_zan2"
+            style="@style/style_btn"
+            android:text="点赞2" />
+
+        <Button
+            android:id="@+id/btn_zan3"
+            style="@style/style_btn"
+            android:text="点赞3" />
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btn_test2"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="测试2" />
+        android:id="@+id/btn_shoucang"
+        style="@style/style_btn"
+        android:text="收藏" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_animationview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:lottie_loop="true" />
+        app:lottie_loop="false" />
 
 </LinearLayout>

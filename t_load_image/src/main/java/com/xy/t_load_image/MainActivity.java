@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+/**
+*https://www.jianshu.com/p/c68a3b9ca07a
+*/
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
