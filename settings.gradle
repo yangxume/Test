@@ -1,4 +1,4 @@
-include ':app', ':t_webview', ':t_expandablelistview', ':t_load_image',
+include ':app', ':t_webview', ':t_expandablelistview', ':t_load_image', ':t_eventbus',
         ':t_fragment',
         ':t_net',
         ':t_lottie_anim',
