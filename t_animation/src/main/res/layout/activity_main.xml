@@ -13,17 +13,13 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_property_anim"
+            android:id="@+id/btn_android_anim"
             style="@style/style_btn"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="property_anim" />
+            android:text="Android_Anim" />
 
         <Button
             android:id="@+id/btn_lottie_anim"
             style="@style/style_btn"
-            android:layout_width="0dp"
-            android:layout_weight="1"
             android:text="Lottie_Anim" />
 
     </LinearLayout>

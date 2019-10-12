@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,50 +18,107 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 参考：https://blog.csdn.net/guolin_blog/article/details/43536355
+ * View Animation
+ * <p>
+ * Frame animation:
+ * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Frame
+ * Tween animation
+ * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Tween
+ * <p>
+ * Property Animation
+ * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Property
+ * https://blog.csdn.net/guolin_blog/article/details/43536355
  *
- * @ProjectName: Test
- * @Package: com.xy.t_animation
- * @ClassName: PropertyAnimActivity
- * @Description: java类作用描述
- * @Author: 作者名
  * @CreateDate: 2019-08-29 14:53
- * @UpdateUser: 更新者：
- * @UpdateDate: 2019-08-29 14:53
- * @UpdateRemark: 更新说明：
  * @Version: 1.0
  */
-public class PropertyAnimActivity extends AppCompatActivity {
+public class AndroidAnimActivity extends AppCompatActivity {
 
-    private static final String TAG = PropertyAnimActivity.class.getSimpleName();
-    @BindView(R.id.btn_value_anim)
-    Button btnValueAnim;
-    @BindView(R.id.btn_object_anim)
-    Button btnObjectAnim;
+    private static final String TAG = AndroidAnimActivity.class.getSimpleName();
+
     @BindView(R.id.tv)
     TextView tv;
+
+    //Tween Animation
+    @BindView(R.id.btn_tween_alpha)
+    Button btnTweenAlpha;
+    @BindView(R.id.btn_tween_rotate)
+    Button btnTweenRotate;
+    @BindView(R.id.btn_tween_scale)
+    Button btnTweenScale;
+    @BindView(R.id.btn_tween_translate)
+    Button btnTweenTranslate;
+
+    @BindView(R.id.btn_value_anim)
+    Button btnValueAnim;
+
+    @BindView(R.id.btn_object_anim)
+    Button btnObjectAnim;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_property_anim);
+        setContentView(R.layout.activity_android_anim);
         ButterKnife.bind(this);
 
     }
 
-    @OnClick({R.id.btn_value_anim, R.id.btn_object_anim})
+    @OnClick({
+            R.id.btn_tween_alpha,
+            R.id.btn_tween_rotate,
+            R.id.btn_tween_scale,
+            R.id.btn_tween_translate,
+
+            R.id.btn_value_anim,
+            R.id.btn_object_anim})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+
+            case R.id.btn_tween_alpha:
+                tweenAlpha();
+                break;
+
+            case R.id.btn_tween_rotate:
+                tweenRotate();
+                break;
+
+            case R.id.btn_tween_scale:
+                tweenScale();
+                break;
+
+            case R.id.btn_tween_translate:
+                tweenTranslate();
+                break;
+
             case R.id.btn_value_anim:
-                testValueAnimation();
+                testValueAnimation();//logcat 查看日志
                 break;
             case R.id.btn_object_anim:
                 testObjectAnimation();
                 break;
         }
     }
+
+    private void tweenTranslate() {
+
+    }
+
+    private void tweenScale() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.tween_scale);
+        tv.startAnimation(animation);
+    }
+
+    private void tweenRotate() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.tween_rotate);
+        tv.startAnimation(animation);
+    }
+
+    private void tweenAlpha() {
+
+    }
+
 
     private void testObjectAnimation() {
 

@@ -19,8 +19,8 @@
         </activity>
 
         <activity
-            android:label="PropertyAnim"
-            android:name=".PropertyAnimActivity"/>
+            android:label="AndroidAnim"
+            android:name=".AndroidAnimActivity"/>
 
         <activity
             android:label="LottieAnim"

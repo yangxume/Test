@@ -28,8 +28,8 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.btn_property_anim)
-    Button btnPropertyAnim;
+    @BindView(R.id.btn_android_anim)
+    Button btnAndroidAnim;
     @BindView(R.id.btn_lottie_anim)
     Button btnLottieAnim;
 
@@ -40,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_property_anim, R.id.btn_lottie_anim})
+    @OnClick({R.id.btn_android_anim, R.id.btn_lottie_anim})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_property_anim:
-                startActivity(new Intent(this, PropertyAnimActivity.class));
+            case R.id.btn_android_anim:
+                startActivity(new Intent(this, AndroidAnimActivity.class));
                 break;
             case R.id.btn_lottie_anim:
                 startActivity(new Intent(this, LottieAnimActivity.class));

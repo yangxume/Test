@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_tween_anim"
+        style="@style/ll_mw"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/style_tv"
+            android:text="TweenAnimation:" />
+        <Button
+            android:id="@+id/btn_tween_alpha"
+            style="@style/style_btn"
+            android:text="alpha" />
+
+        <Button
+            android:id="@+id/btn_tween_rotate"
+            style="@style/style_btn"
+            android:text="rotate" />
+
+        <Button
+            android:id="@+id/btn_tween_scale"
+            style="@style/style_btn"
+            android:text="scale" />
+
+        <Button
+            android:id="@+id/btn_tween_translate"
+            style="@style/style_btn"
+            android:text="translate" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_value_anim"
+        style="@style/ll_mw"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_tween_anim">
+
+        <TextView
+            style="@style/style_tv"
+            android:text="ValueAnimator:" />
+        <Button
+            android:id="@+id/btn_value_anim"
+            style="@style/style_btn"
+            android:text="value_anim" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        style="@style/ll_mw"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_value_anim">
+
+        <TextView
+            style="@style/style_tv"
+            android:text="ObjectAnimator:" />
+
+        <Button
+            android:id="@+id/btn"
+            style="@style/style_btn"
+            android:text="value_anim" />
+
+        <Button
+            android:id="@+id/btn_object_anim"
+            style="@style/style_btn"
+            android:text="object_anim" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv"
+        style="@style/style_tv"
+        android:text="abc"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
