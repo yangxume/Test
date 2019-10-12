@@ -1,4 +1,4 @@
-include ':app',
+include ':app', ':t_doughnut',
         ':t_webview',
         ':t_expandablelistview',
         ':t_load_image',
@@ -14,7 +14,6 @@ include ':app',
         ':ArticlesProvider',
         ':brocast_receiver',
         ':recyclerview',
-        ':doughnut',
         ':fitchart'
 
 
