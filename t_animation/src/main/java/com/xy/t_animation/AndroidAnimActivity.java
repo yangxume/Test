@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,12 +20,15 @@ import butterknife.OnClick;
 
 /**
  * View Animation
- * <p>
+ * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en
+ *
  * Frame animation:
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Frame
+ *
  * Tween animation
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Tween
- * <p>
+ * https://www.jianshu.com/p/abeca56da5e4
+ *
  * Property Animation
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Property
  * https://blog.csdn.net/guolin_blog/article/details/43536355
@@ -106,8 +110,24 @@ public class AndroidAnimActivity extends AppCompatActivity {
     }
 
     private void tweenScale() {
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.tween_scale);
-        tv.startAnimation(animation);
+
+//        Animation animation = AnimationUtils.loadAnimation(this, R.anim.tween_scale);
+//        tv.startAnimation(animation);
+
+        ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f,1.5f,1.0f,0.5f);
+        //动画持续时间
+        scaleAnimation.setDuration(500);
+        //如果设置为true，控件动画结束时，将保持动画最后时的状态
+        scaleAnimation.setFillAfter(true);
+        //如果设置为true,控件动画结束时，还原到开始动画前的状态
+        scaleAnimation.setFillBefore(false);
+        //重复次数
+        scaleAnimation.setRepeatCount(2);
+        //重复类型，有reverse和restart两个值，reverse表示倒序回放，restart表示重新放一遍，必须与repeatCount一起使用
+        scaleAnimation.setRepeatMode(Animation.RESTART);
+
+        tv.startAnimation(scaleAnimation);
+
     }
 
     private void tweenRotate() {
