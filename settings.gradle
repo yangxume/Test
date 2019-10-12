@@ -1,4 +1,8 @@
-include ':app', ':t_webview', ':t_expandablelistview', ':t_load_image', ':t_eventbus',
+include ':app',
+        ':t_webview',
+        ':t_expandablelistview',
+        ':t_load_image',
+        ':t_eventbus',
         ':t_fragment',
         ':t_net',
         ':t_lottie_anim',
@@ -11,6 +15,6 @@ include ':app', ':t_webview', ':t_expandablelistview', ':t_load_image', ':t_even
         ':brocast_receiver',
         ':recyclerview',
         ':doughnut',
-        ':fitchart',
-        ':timeline'
+        ':fitchart'
+
 
