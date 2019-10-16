@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/ll_tween_anim"
+        android:id="@+id/ll_frame_anim"
         style="@style/ll_mw"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -16,7 +16,28 @@
 
         <TextView
             style="@style/style_tv"
+            android:text="FrameAnimation:" />
+        <Button
+            android:id="@+id/btn_start_frame"
+            style="@style/style_btn"
+            android:text="start" />
+        <Button
+            android:id="@+id/btn_stop_frame"
+            style="@style/style_btn"
+            android:text="stop" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tween_anim"
+        style="@style/ll_mw"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_frame_anim">
+
+        <TextView
+            style="@style/style_tv"
             android:text="TweenAnimation:" />
+
         <Button
             android:id="@+id/btn_tween_alpha"
             style="@style/style_btn"
@@ -36,7 +57,6 @@
             android:id="@+id/btn_tween_translate"
             style="@style/style_btn"
             android:text="translate" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -45,7 +65,6 @@
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_tween_anim">
-
         <TextView
             style="@style/style_tv"
             android:text="ValueAnimator:" />
@@ -53,7 +72,6 @@
             android:id="@+id/btn_value_anim"
             style="@style/style_btn"
             android:text="value_anim" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -62,31 +80,37 @@
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_value_anim">
-
         <TextView
             style="@style/style_tv"
             android:text="ObjectAnimator:" />
-
         <Button
             android:id="@+id/btn"
             style="@style/style_btn"
             android:text="value_anim" />
-
         <Button
             android:id="@+id/btn_object_anim"
             style="@style/style_btn"
             android:text="object_anim" />
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv"
         style="@style/style_tv"
-        android:text="abc"
         android:background="@android:color/darker_gray"
+        android:text="abc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv"
+        app:layout_constraintTop_toBottomOf="@id/tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="cd_android_icon">Android icon</string>
+
 </resources>

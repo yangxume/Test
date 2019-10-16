@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -21,14 +22,14 @@ import butterknife.OnClick;
 /**
  * View Animation
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en
- *
+ * <p>
  * Frame animation:
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Frame
- *
+ * <p>
  * Tween animation
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Tween
  * https://www.jianshu.com/p/abeca56da5e4
- *
+ * <p>
  * Property Animation
  * https://developer.android.google.cn/guide/topics/resources/animation-resource.html?hl=en#Property
  * https://blog.csdn.net/guolin_blog/article/details/43536355
@@ -40,8 +41,11 @@ public class AndroidAnimActivity extends AppCompatActivity {
 
     private static final String TAG = AndroidAnimActivity.class.getSimpleName();
 
-    @BindView(R.id.tv)
-    TextView tv;
+    //Frame Animation
+    @BindView(R.id.btn_start_frame)
+    Button btnStart;
+    @BindView(R.id.btn_stop_frame)
+    Button btnStop;
 
     //Tween Animation
     @BindView(R.id.btn_tween_alpha)
@@ -53,12 +57,17 @@ public class AndroidAnimActivity extends AppCompatActivity {
     @BindView(R.id.btn_tween_translate)
     Button btnTweenTranslate;
 
+    //ObjectAnimation
     @BindView(R.id.btn_value_anim)
     Button btnValueAnim;
 
     @BindView(R.id.btn_object_anim)
     Button btnObjectAnim;
 
+    @BindView(R.id.tv)
+    TextView tv;
+    @BindView(R.id.iv)
+    ImageView iv;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +79,9 @@ public class AndroidAnimActivity extends AppCompatActivity {
     }
 
     @OnClick({
+            R.id.btn_start_frame,
+            R.id.btn_stop_frame,
+
             R.id.btn_tween_alpha,
             R.id.btn_tween_rotate,
             R.id.btn_tween_scale,
@@ -114,7 +126,7 @@ public class AndroidAnimActivity extends AppCompatActivity {
 //        Animation animation = AnimationUtils.loadAnimation(this, R.anim.tween_scale);
 //        tv.startAnimation(animation);
 
-        ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f,1.5f,1.0f,0.5f);
+        ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.5f, 1.0f, 0.5f);
         //动画持续时间
         scaleAnimation.setDuration(500);
         //如果设置为true，控件动画结束时，将保持动画最后时的状态
