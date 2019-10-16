@@ -1,4 +1,4 @@
-package com.xy.recyclerview.util;
+package com.xy.recyclerview.raisehand;
 
 import android.os.Handler;
 

@@ -7,6 +7,11 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import com.xy.recyclerview.raisehand.RaiseHandActivity;
+import com.xy.recyclerview.recygrid.RecyGridActivity;
+import com.xy.recyclerview.recylist.RecyListActivity;
+import com.xy.recyclerview.twinklingrefresh.TwinklingRefreshLayoutActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

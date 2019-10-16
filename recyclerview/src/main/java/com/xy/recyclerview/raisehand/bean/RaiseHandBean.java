@@ -1,4 +1,4 @@
-package com.xy.recyclerview.bean;
+package com.xy.recyclerview.raisehand.bean;
 
 public class RaiseHandBean {
 

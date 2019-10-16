@@ -1,9 +1,11 @@
-package com.xy.recyclerview;
+package com.xy.recyclerview.twinklingrefresh;
 
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.xy.recyclerview.R;
 
 /**
  * https://blog.csdn.net/u014608640/article/details/52933584

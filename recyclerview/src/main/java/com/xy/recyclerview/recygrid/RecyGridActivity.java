@@ -1,4 +1,4 @@
-package com.xy.recyclerview;
+package com.xy.recyclerview.recygrid;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,8 @@ import android.support.v7.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.xy.recyclerview.bean.RecyGridBean;
+import com.xy.recyclerview.R;
+import com.xy.recyclerview.recygrid.bean.RecyGridBean;
 import com.xy.recyclerview.view.SpacesItemDecoration;
 
 import java.util.ArrayList;

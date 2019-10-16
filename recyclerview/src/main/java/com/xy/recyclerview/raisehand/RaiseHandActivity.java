@@ -1,4 +1,4 @@
-package com.xy.recyclerview;
+package com.xy.recyclerview.raisehand;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.xy.recyclerview.adapter.RaiseHandAdapter;
-import com.xy.recyclerview.bean.RaiseHandBean;
-import com.xy.recyclerview.util.DataManager;
+import com.xy.recyclerview.R;
+import com.xy.recyclerview.raisehand.adapter.RaiseHandAdapter;
+import com.xy.recyclerview.raisehand.bean.RaiseHandBean;
 
 import java.util.ArrayList;
 import java.util.List;

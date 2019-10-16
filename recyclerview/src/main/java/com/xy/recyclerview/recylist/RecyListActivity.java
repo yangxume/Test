@@ -1,19 +1,18 @@
-package com.xy.recyclerview;
+package com.xy.recyclerview.recylist;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.xy.recyclerview.R;
 import com.xy.recyclerview.view.DividerGridItemDecoration;
 
 import java.util.ArrayList;

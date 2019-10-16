@@ -1,4 +1,4 @@
-package com.xy.recyclerview.adapter;
+package com.xy.recyclerview.raisehand.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
@@ -12,9 +12,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.xy.recyclerview.util.DataManager;
+import com.xy.recyclerview.raisehand.DataManager;
 import com.xy.recyclerview.R;
-import com.xy.recyclerview.bean.RaiseHandBean;
+import com.xy.recyclerview.raisehand.bean.RaiseHandBean;
 
 import java.util.List;
 

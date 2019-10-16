@@ -17,10 +17,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RecyListActivity"/>
-        <activity android:name=".RecyGridActivity"/>
-        <activity android:name=".RaiseHandActivity"/>
-        <activity android:name=".TwinklingRefreshLayoutActivity"/>
+        <activity android:name=".recylist.RecyListActivity"/>
+        <activity android:name=".recygrid.RecyGridActivity"/>
+        <activity android:name=".raisehand.RaiseHandActivity"/>
+        <activity android:name=".twinklingrefresh.TwinklingRefreshLayoutActivity"/>
 
     </application>
 
