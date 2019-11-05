@@ -1,4 +1,4 @@
-include ':app', ':t_doughnut',
+include ':app', ':t_doughnut', ':t_bytecode',
         ':t_webview',
         ':t_expandablelistview',
         ':t_load_image',
@@ -14,6 +14,8 @@ include ':app', ':t_doughnut',
         ':ArticlesProvider',
         ':brocast_receiver',
         ':recyclerview',
-        ':fitchart'
+        ':fitchart',
+        ':buildSrc'
+
 
 
