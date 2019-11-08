@@ -1,0 +1,41 @@
+
+
+public class com.okay.test.AsmTest {
+  public com.okay.test.AsmTest();
+    Code:
+       0: aload_0   
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public void printLog();
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #3                  // String printLog
+       5: invokevirtual #4                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+       8: return
+}
+
+
+解释：
+
+第6行：    aload_0:  
+          这个指令是LOAD系列指令中的一个，它的意思表示装载当前第 0 个引用类型的元素到堆栈中。
+          不同数据类型指令：ALOAD，ILOAD，LLOAD，FLOAD，DLOAD ，SALOAD（数组类型）
+
+第7行：    invokespecial 调用对象类的方法，后面需要给上父类的方法完整签名
+
+第12行：   GETSTATIC：
+          指令是GET系列指令中的一个其作用是获取静态字段内容到堆栈中。这一系列指令包括了：GETFIELD、GETSTATIC。它们分别用于获取动态字段和静态字段。
+
+第13行：
+
+        IDC：
+        这个指令的功能是从常量表中装载一个数据到堆栈中。
+ 
+第14行：
+       invokevirtual： 根据引用调用对象类的方法。
+
+第15行：
+     RETURN：标示方法调用完毕返回：可用的其他指令有：IRETURN，DRETURN，ARETURN等，用于表示不同类型参数的返回
+
+
