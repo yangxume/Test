@@ -32,7 +32,7 @@ public class ExampleUnitTest {
 
         DiskClassLoader diskClassLoader = new DiskClassLoader("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean");//1
         try {
-            Class c = diskClassLoader.loadClass("com.xy.t_bytecode.bean.LoginPresenter_new");//2
+            Class c = diskClassLoader.loadClass("com.xy.t_bytecode.bean.LoginPresenter");//2
             if (c != null) {
                 try {
                     Object obj = c.newInstance();
@@ -55,9 +55,7 @@ public class ExampleUnitTest {
     @Test
     public void testAsmCreateNewClass(){
 
-        DiskClassLoader diskClassLoader = new DiskClassLoader("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean");//1
         try {
-//            Class c = diskClassLoader.loadClass("com.xy.t_bytecode.bean.LoginPresenter");//2
 
             ClassWriter classWriter = new ClassWriter(0);
 

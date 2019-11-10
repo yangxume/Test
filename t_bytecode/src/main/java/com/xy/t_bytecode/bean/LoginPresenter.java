@@ -6,7 +6,6 @@ public class LoginPresenter {
         System.out.println("---this is log data---");
     }
 
-
     public void login(){
         System.out.println("---user login--");
         try {
@@ -15,15 +14,4 @@ public class LoginPresenter {
             e.printStackTrace();
         }
     }
-
-
-    public void logout(){
-        System.out.println("---user logout---");
-    }
-
-    public void leaveLoginPage(){
-        System.out.println("---user leave loginPage---");
-    }
-
-
 }
