@@ -11,12 +11,12 @@ class MyMethodVisitor extends MethodVisitor implements Opcodes {
 
     public void visitCode() {
         super.visitCode();
-        this.visitMethodInsn(INVOKESTATIC, "com/xy/t_bytecode/bean/LogPrintInterceptor", "startLogPrint", "()V");
+        this.visitMethodInsn(INVOKESTATIC, "com/xy/t_bytecode/bean/LogPrintInterceptor", "startLogPrint", "()V",false);
     }
 
     public void visitInsn(int opcode) {
         if (opcode == RETURN) {
-            mv.visitMethodInsn(INVOKESTATIC, "com/xy/t_bytecode/bean/LogPrintInterceptor", "endLogPrint", "()V");
+            mv.visitMethodInsn(INVOKESTATIC, "com/xy/t_bytecode/bean/LogPrintInterceptor", "endLogPrint", "()V",false);
         }
         super.visitInsn(opcode);
     }

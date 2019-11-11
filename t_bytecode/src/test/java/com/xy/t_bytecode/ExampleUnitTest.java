@@ -1,5 +1,6 @@
 package com.xy.t_bytecode;
 
+import com.xy.t_bytecode.asm.CustomClassVisitor;
 import com.xy.t_bytecode.asm.MyClassVisitor;
 import com.xy.t_bytecode.classloader.DiskClassLoader;
 
@@ -28,11 +29,51 @@ public class ExampleUnitTest {
     }
 
     @Test
+    public void testAsmCreateNewClass(){
+
+        try {
+
+            ClassWriter classWriter = new ClassWriter(0);
+
+            FileInputStream fileInputStream = new FileInputStream("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean/LoginPresenter.class");
+            ClassReader classReader = new ClassReader(fileInputStream);
+//            classReader.accept(new MyClassVisitor(ASM4,classWriter),ClassReader.SKIP_DEBUG);
+            classReader.accept(new CustomClassVisitor(classWriter),ClassReader.SKIP_DEBUG);
+
+            byte[] code = classWriter.toByteArray();
+            FileOutputStream fos = new FileOutputStream("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean/LoginPresenter_new.class");
+            fos.write(code);
+            fos.flush();
+            fos.close();
+
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Test
     public void testClassLoader(){
 
         DiskClassLoader diskClassLoader = new DiskClassLoader("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean");//1
         try {
-            Class c = diskClassLoader.loadClass("com.xy.t_bytecode.bean.LoginPresenter");//2
+            Class c = diskClassLoader.loadClass("com.xy.t_bytecode.bean.LoginPresenter_new");//2
             if (c != null) {
                 try {
                     Object obj = c.newInstance();
@@ -51,31 +92,6 @@ public class ExampleUnitTest {
             e.printStackTrace();
         }
     }
-
-    @Test
-    public void testAsmCreateNewClass(){
-
-        try {
-
-            ClassWriter classWriter = new ClassWriter(0);
-
-            FileInputStream fileInputStream = new FileInputStream("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean/LoginPresenter.class");
-            ClassReader classReader = new ClassReader(fileInputStream);
-            classReader.accept(new MyClassVisitor(ASM4,classWriter),ClassReader.SKIP_DEBUG);
-
-            byte[] code = classWriter.toByteArray();
-            FileOutputStream fos = new FileOutputStream("/Users/xuyang/Documents/work_android/Test/t_bytecode/src/main/java/com/xy/t_bytecode/bean/LoginPresenter_new.class");
-            fos.write(code);
-            fos.flush();
-            fos.close();
-
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
 
 }
