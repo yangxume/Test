@@ -18,8 +18,10 @@
 <!--        <activity android:name=".ActivityHandler">-->
 <!--        <activity android:name=".ActivityHomeKey">-->
 <!--        <activity android:name=".ActivityExpandListView">-->
-<!--        <activity android:name=".keyboard.ActivityKeyboard">-->
-        <activity android:name=".TestActivity">
+        <activity android:name=".keyboard.ActivityKeyboard1"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            >
+<!--        <activity android:name=".TestActivity">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
