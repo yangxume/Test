@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <Switch
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:thumb="@drawable/switch_custom_thumb_selector"
+        android:track="@drawable/switch_custom_track_selector" />
+
     <Button
         android:id="@+id/btn1_about_image"
         style="@style/style_common_btn"
