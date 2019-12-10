@@ -53,6 +53,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:text="实线描边的矩形"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        android:background="@drawable/test_shape6"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="虚线描边的矩形"
         android:textSize="20sp"
         android:textColor="#ff0000"
