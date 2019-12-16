@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -14,15 +17,22 @@
         android:theme="@style/AppTheme">
         <!--<activity android:name=".activity.ProcessIsBackgroundActivity">-->
 <!--        <activity android:name=".activity.TestDrawCircleActivity">-->
-        <activity android:name=".TestShpeActivity">
+<!--        <activity android:name=".TestShpeActivity">-->
 <!--        <activity android:name=".activity.MainActivity">-->
 <!--        <activity android:name=".ActivityHandler">-->
 <!--        <activity android:name=".ActivityHomeKey">-->
 <!--        <activity android:name=".ActivityExpandListView">-->
 <!--        <activity android:name=".keyboard.ActivityKeyboard1"-->
-<!--            android:windowSoftInputMode="stateVisible|adjustResize"-->
-<!--            >-->
-<!--        <activity android:name=".TestActivity">-->
+        <!--            android:windowSoftInputMode="stateVisible|adjustResize"-->
+        <!--            >-->
+        <!--        <activity android:name=".TestActivity">-->
+
+
+
+        <activity
+            android:windowSoftInputMode="adjustUnspecified"
+            android:name=".keyboard.TestKeyboard2Activity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
