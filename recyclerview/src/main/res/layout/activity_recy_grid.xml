@@ -19,13 +19,18 @@
         android:scrollbars="vertical"
         android:fadeScrollbars="false"
         android:scrollbarStyle="outsideInset"
-        android:paddingLeft="@dimen/dp_10"
-        android:paddingRight="@dimen/dp_10"
+        android:paddingLeft="20dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingRight="20dp"
         android:layout_marginLeft="53dp"
         android:layout_marginRight="53dp"
+        android:scrollbarSize="6dp"
         android:scrollbarThumbVertical="@drawable/classroom_scrollbar_bg"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:background="@android:color/white" />
+        android:background="@android:color/white"
+        android:overScrollMode="never"
+        android:fadingEdgeLength="0dp"
+        />
 
 </LinearLayout>

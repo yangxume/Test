@@ -28,10 +28,9 @@
         <!--        <activity android:name=".TestActivity">-->
 
 
-
         <activity
-            android:windowSoftInputMode="adjustUnspecified"
-            android:name=".keyboard.TestKeyboard2Activity">
+            android:windowSoftInputMode="adjustResize"
+            android:name=".keyboard.ActivityKeyboard1">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
